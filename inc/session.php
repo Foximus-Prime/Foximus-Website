@@ -1,6 +1,6 @@
 <?php
-include("inc/database.php");
-include("inc/form.php");
+include("database.php");
+include("form.php");
 
 session_set_save_handler('_open', '_close', '_read', '_write', '_destroy', '_clean');
 

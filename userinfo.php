@@ -1,13 +1,6 @@
 <?php
 include("inc/sessionNew.php");
 ?>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fluid Logins - User Info</title>
-<?php
-include("inc/sessionNew.php");
-?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->

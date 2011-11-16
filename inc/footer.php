@@ -35,6 +35,17 @@
 	
 	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
 	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
+    
+    <?php
+    /*
+		if($session->isAdmin()) {
+			echo "<script type=\"text/javascript\" src=\"js/mylibs/tiny_mce/tiny_mce.js\"></script>"
+				."<script type=\"text/javascript\">tinyMCE.init({
+						mode : \"textareas\",
+						theme : \"advanced\"
+					});</script>";
+		}*/
+	?>
 
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>

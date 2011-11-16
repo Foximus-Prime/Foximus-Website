@@ -1,6 +1,6 @@
 <?php
-include("inc/database.php");
-include("inc/form.php");
+include("database.php");
+include("form.php");
 
 
 

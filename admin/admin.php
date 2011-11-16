@@ -1,244 +1,153 @@
-<?
-include("inc/sessionNew.php");
+<?php 
 
-/**
- * displayUsers - Displays the users database table in
- * a nicely formatted html table.
- */
-function displayUsers(){
-   global $database;
-   $q = "SELECT Name,Permisions,Email,Timestamp "
-       ."FROM ".TBL_USERS." ORDER BY Permisions DESC,Name";
-   $result = $database->query($q);
-   /* Error occurred, return given name by default */
-   $num_rows = mysql_numrows($result);
-   if(!$result || ($num_rows < 0)){
-      echo "Error displaying info";
-      return;
-   }
-   if($num_rows == 0){
-      echo "Database table empty";
-      return;
-   }
-   /* Display table contents */
-   echo "<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n";
-   echo "<tr><td><b>Username</b></td><td><b>Level</b></td><td><b>Email</b></td><td><b>Last Active</b></td></tr>\n";
-   for($i=0; $i<$num_rows; $i++){
-      $uname  = mysql_result($result,$i,"Name");
-      $ulevel = mysql_result($result,$i,"Permisions");
-      $email  = mysql_result($result,$i,"Email");
-      $time   = mysql_result($result,$i,"Timestamp");
-
-      echo "<tr><td>$uname</td><td>$ulevel</td><td>$email</td><td>$time</td></tr>\n";
-   }
-   echo "</table><br>\n";
-}
-
+include("../inc/sessionNew.php");
 
 /**
  * User not an administrator, redirect to main page
  * automatically.
- */
+**/
+
 if(!$session->isAdmin()){
    header("Location: ../index.php");
-}
-else{
+}else{
 ?>
-<html>
+
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fluid Logins - Admin Center</title>
-<base href="file:///C|/Users/Austin's Machine/Documents/Web Sites" />
-<?php
-	include("file:///C|/Users/Austin's Machine/Documents/Web Sites/inc/header.php");
-?>
-        
-		<section id="mainCont">
-<?php
+  <meta charset="utf-8">
+  <title>Foximus-Prime</title>
+<base href="../" />
 
-/**
- * displayBannedUsers - Displays the banned users
- * database table in a nicely formatted html table.
- */
-function displayBannedUsers(){
-   global $database;
-   $q = "SELECT Name,Timestamp "
-       ."FROM ".TBL_BANNED_USERS." ORDER BY Name";
-   $result = $database->query($q);
-   /* Error occurred, return given name by default */
-   $num_rows = mysql_numrows($result);
-   if(!$result || ($num_rows < 0)){
-      echo "Error displaying info";
-      return;
-   }
-   if($num_rows == 0){
-      echo "Database table empty";
-      return;
-   }
-   /* Display table contents */
-   echo "<table border=\"1\" cellspacing=\"0\" cellpadding=\"3\">\n";
-   echo "<tr><td><b>Username</b></td><td><b>Time Banned</b></td></tr>\n";
-   for($i=0; $i<$num_rows; $i++){
-      $uname = mysql_result($result,$i,"Name");
-      $time  = mysql_result($result,$i,"Timestamp");
-
-      echo "<tr><td>$uname</td><td>$time</td></tr>\n";
-   }
-   echo "</table><br>\n";
-}
-   
-
-/**
- * Administrator is viewing page, so display all
- * forms.
- */
+<?php 
+	include("../inc/header.php");
 ?>
 
-<h1>Admin Center</h1>
+		<div class="container_12" style="padding-top: 20px;">
+        	<div class="grid_6">
+            	<div class="contentHead">
+                	<h3>User Panel</h3>
+                </div>
+                <article class="contentCont"  id="topInfo">
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?list_users=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        	<input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/list_users.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?delete_user=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        	<input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/remove_user.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?list_banned_users=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        	<input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/list_banned_users.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?add_user=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                         <input style="display:none;" type="text" value="1" />
+                        	<input type="image" src="img/icons/add_user.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?ban_user=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                       	  <input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/ban_user.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?update_user_level=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        	<input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/change_user_permisions.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
+              </article>
+            </div>
+            <script type="text/javascript" src="js/mylibs/tiny_mce/tiny_mce.js"></script>
+			<script type="text/javascript">
+					tinyMCE.init({
+						mode : "textareas",
+						theme : "advanced"
+					});
+			</script>
+            <script type="text/javascript">
+					
+				
+				function ajaxLoad() {
+						var ed = tinyMCE.get('content');
+						var id = tinyMCE.get('id');
+				
+						// Do you ajax call here, window.setTimeout fakes ajax call
+						ed.setProgressState(1); // Show progress
+						$.post("modifyCont.php", { reqData: 1, contID: id },
+						   function(data) {
+							 ed.setProgressState(0); // Hide progress
+							 ed.setContent(data);
+						   });
+						
+				}
+				
+				function ajaxSave() {
+						var ed = tinyMCE.get('content');
+						var id = tinyMCE.get('id');
+						
+						// Do you ajax call here, window.setTimeout fakes ajax call
+						ed.setProgressState(1); // Show progress
+						$.post("test.php", { sendData: 1, contID: id, data: ed }, function(data){ed.setProgressState(0);} );
+				}
+            </script>
+        	<div class="grid_6">
+            	<div class="contentHead">
+                	<h3>Content Panel</h3>
+                </div>
+                <article class="contentCont"  id="topInfo">
+                    <form method="post" action="somepage">
+                            <textarea name="content" id="1" style="width:100%">
+                            <?php 
+								$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 1");
+								echo mysql_result($rs, 0);
+							?>
+                            </textarea>
+                    </form>
+                </article>
+            </div>
+        </div>
+        <div class="clear"></div>
+		<div class="container_12" style="padding-top: 20px;">
+        	<div class="grid_6">
+            	<div class="contentHead">
+                	<h3>Statistics Panel</h3>
+                </div>
+                <article class="contentCont"  id="topInfo">
+                    <p>
+                    		<?php
 
-<?
-if($form->num_errors > 0){
-   echo "<p style=\"color:red\">"
-       ."!*** Error with request, please fix</p>";
-}
+                            echo "</td></tr><tr><td align=\"center\"><br><br>";
 
-/**
- * Display Users Table
- */
-?>
-<h3>Users Table Contents:</h3>
-<?
-displayUsers();
-?>
+                            echo "<b>Member Total:</b> ".$database->getNumMembers()."<br>";
 
-<br>
-<?
-/**
- * Update User Level
- */
-?>
-<h3>Update User Level</h3>
-<? echo $form->error("upduser"); ?>
-<fieldset>
-    <legend>Update User Level</legend>
-    <form action="file:///C|/Users/Austin's Machine/Documents/Web Sites/admin/adminprocess.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<?php echo $form->value("upduser"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="upduser" /></dd>
-        </dl>
-        	<select name="updlevel">
-			<option value="1">1</option>
-			<option value="9">9</option>
-			</select>
-        <input type="hidden" name="subupdlevel" value="1">
-        <input type="submit" value="Update Level" />
-    </form>
-</fieldset>
+                            echo "There are $database->num_active_users registered members and ";
 
-<?
-/**
- * Delete User
- */
-?>
-<? echo $form->error("deluser"); ?>
-<fieldset>
-    <legend>Delete User</legend>
-    <form action="file:///C|/Users/Austin's Machine/Documents/Web Sites/admin/adminprocess.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<?php echo $form->value("deluser"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="deluser" /></dd>
-        </dl>
-        <input type="hidden" name="subdeluser" value="1">
-        <input type="submit" value="Delete User" />
-    </form>
-</fieldset>
+                            echo "$database->num_active_guests guests viewing the site.<br><br>";
 
-<?
-/**
- * Delete Inactive Users
- */
-?>
-<h3>Delete Inactive Users</h3>
-This will delete all users (not administrators), who have not logged in to the site<br>
-within a certain time period. You specify the days spent inactive.<br><br>
+                            
 
-<fieldset>
-    <legend>Delete Inactive Users</legend>
-    <form action="file:///C|/Users/Austin's Machine/Documents/Web Sites/admin/adminprocess.php" method="post">
-        	<select name="inactdays">
-				<option value="3">3</option>
-				<option value="7">7</option>
-            	<option value="14">14</option>
-				<option value="30">30</option>
-				<option value="100">100</option>
-				<option value="365">365</option>
-			</select>
-        <input type="hidden" name="subdelinact" value="1">
-        <input type="submit" value="Delete All Inactive" />
-    </form>
-</fieldset>
+                            include("../inc/view_active.php");
 
-<?
-/**
- * Ban User
- */
-?>
-<? echo $form->error("banuser"); ?>
-<fieldset>
-    <legend>Ban User</legend>
-    <form action="file:///C|/Users/Austin's Machine/Documents/Web Sites/admin/admin/adminprocess.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<?php echo $form->value("banuser"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="banuser" /></dd>
-        </dl>
-        <input type="hidden" name="subbanuser" value="1">
-        <input type="submit" value="Ban User" />
-    </form>
-</fieldset>
-
-<?
-/**
- * Display Banned Users Table
- */
-?>
-<h3>Banned Users Table Contents:</h3>
-<?
-displayBannedUsers();
-
-/**
- * Delete Banned User
- */
-?>
-<? echo $form->error("delbanuser"); ?>
-<fieldset>
-    <legend>Delete Banned User</legend>
-    <form action="file:///C|/Users/Austin's Machine/Documents/Web Sites/admin/adminprocess.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<?php echo $form->value("delbanuser"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="delbanuser" /></dd>
-        </dl>
-        <input type="hidden" name="subdelbanned" value="1">
-        <input type="submit" value="Delete Banned User" />
-    </form>
-</fieldset>
-<?
-}
-?>
-  		</section>
-
-        
-		<footer id="footer">
-<?php
-echo "</td></tr><tr><td align=\"center\"><br><br>";
-echo "<b>Member Total:</b> ".$database->getNumMembers()."<br>";
-echo "There are $database->num_active_users registered members and ";
-echo "$database->num_active_guests guests viewing the site.<br><br>";
-
-include("file:///C|/Users/Austin's Machine/Documents/Web Sites/inc/view_active.php");
-?>
-		</footer>
-
-</div>
-</body>
-</html>
-
+                            ?>
+                    </p>
+                </article>
+            </div>
+        	<div class="grid_6">
+            	<div class="contentHead">
+                	<h3> Panel</h3>
+                </div>
+                <article class="contentCont"  id="topInfo">
+                    <p>
+                    </p>
+                </article>
+            </div>
+        </div>
+        <div class="clear"></div>
+<?php } ?>
+<?php  include("../inc/footer.php"); ?>

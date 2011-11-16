@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * AdminProcess.php
  * 
@@ -9,7 +9,7 @@
  * Written by: Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)
  * Last Updated: August 15, 2004
  */
-include("sessionNew.php");
+include("../inc/sessionNew.php");
 
 class AdminProcess
 {
