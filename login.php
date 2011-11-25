@@ -31,22 +31,30 @@ if($session->logged_in){
 else{
 ?>
 
-<fieldset>
-    <legend>Log In</legend>
-    <form id="login" action="loginCheck.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
-            <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
-            <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
-            <dt><p>Remember me next time</p></dt>
-            <dd><input type="checkbox" name="remember" <? if($form->value("remember") != ""){ echo "checked"; } ?>/></dd>
-        </dl>
-        <input type="hidden" name="sublogin" value="1">
-        <input type="submit" value="Login" />
-    </form>
-</fieldset>
-
+<div class="container_12" style="padding-top: 20px;">
+    <div class="grid_12">
+        <div class="contentHead">
+            <h3>Login</h3>
+        </div>
+        <article class="contentCont"  id="topInfo">
+            <fieldset>
+                <legend>Log In</legend>
+                <form id="login" action="loginCheck.php" method="post">
+                    <dl>
+                        <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
+                        <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
+                        <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
+                        <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
+                        <dt><p>Remember me next time</p></dt>
+                        <dd><input type="checkbox" name="remember" <? if($form->value("remember") != ""){ echo "checked"; } ?>/></dd>
+                    </dl>
+                    <input type="hidden" name="sublogin" value="1">
+                    <input type="submit" value="Login" />
+                </form>
+            </fieldset>
+      </article>
+    </div>
+</div>
   		</section>
 
         

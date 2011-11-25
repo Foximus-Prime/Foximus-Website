@@ -21,7 +21,7 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
 
   <script src="js/mylibs/beautyTips/jquery.bt.min.js"></script>
 
@@ -37,14 +37,47 @@
 	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
     
     <?php
-    /*
+    
 		if($session->isAdmin()) {
-			echo "<script type=\"text/javascript\" src=\"js/mylibs/tiny_mce/tiny_mce.js\"></script>"
-				."<script type=\"text/javascript\">tinyMCE.init({
-						mode : \"textareas\",
-						theme : \"advanced\"
-					});</script>";
-		}*/
+			
+	?>
+			<script type="text/javascript" src="js/mylibs/tiny_mce/tiny_mce_src.js"></script>
+			<script type="text/javascript">
+			$(document).ready(function(){
+					tinyMCE.init({
+						mode : "textareas",
+						theme : "advanced"
+					});
+			});
+			</script>
+            <script type="text/javascript">
+					
+				
+				function ajaxLoad() {
+						var ed = tinyMCE.get('content');
+						var id = tinyMCE.get('id');
+				
+						// Do you ajax call here, window.setTimeout fakes ajax call
+						ed.setProgressState(1); // Show progress
+						$.post("modifyCont.php", { reqData: 1, contID: id },
+						   function(data) {
+							 ed.setProgressState(0); // Hide progress
+							 ed.setContent(data);
+						   });
+						
+				}
+				
+				function ajaxSave() {
+						var ed = tinyMCE.get('content');
+						var id = tinyMCE.get('id');
+						
+						// Do you ajax call here, window.setTimeout fakes ajax call
+						ed.setProgressState(1); // Show progress
+						$.post("test.php", { sendData: 1, contID: id, data: ed }, function(data){ed.setProgressState(0);} );
+				}
+            </script>
+    <?php
+		}
 	?>
 
   <!--[if lt IE 7 ]>

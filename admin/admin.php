@@ -63,39 +63,6 @@ if(!$session->isAdmin()){
                         </form>
               </article>
             </div>
-            <script type="text/javascript" src="js/mylibs/tiny_mce/tiny_mce.js"></script>
-			<script type="text/javascript">
-					tinyMCE.init({
-						mode : "textareas",
-						theme : "advanced"
-					});
-			</script>
-            <script type="text/javascript">
-					
-				
-				function ajaxLoad() {
-						var ed = tinyMCE.get('content');
-						var id = tinyMCE.get('id');
-				
-						// Do you ajax call here, window.setTimeout fakes ajax call
-						ed.setProgressState(1); // Show progress
-						$.post("modifyCont.php", { reqData: 1, contID: id },
-						   function(data) {
-							 ed.setProgressState(0); // Hide progress
-							 ed.setContent(data);
-						   });
-						
-				}
-				
-				function ajaxSave() {
-						var ed = tinyMCE.get('content');
-						var id = tinyMCE.get('id');
-						
-						// Do you ajax call here, window.setTimeout fakes ajax call
-						ed.setProgressState(1); // Show progress
-						$.post("test.php", { sendData: 1, contID: id, data: ed }, function(data){ed.setProgressState(0);} );
-				}
-            </script>
         	<div class="grid_6">
             	<div class="contentHead">
                 	<h3>Content Panel</h3>

@@ -1,5 +1,5 @@
   <meta name="description" content="">
-  <link type="text/plain" rel="author" href="http://domain/humans.txt" />
+  <link type="text/plain" rel="author" href="http://yorkvillerobotics.com/humans.txt" />
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

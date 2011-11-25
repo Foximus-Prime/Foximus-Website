@@ -73,21 +73,31 @@ if($form->num_errors > 0){
    echo "<p class=\"errors\">".$form->num_errors." error(s) found</p>";
 }
 ?>
-<fieldset>
-    <legend>Register</legend>
-    <form id="login" action="../Login/login2.php" method="post">
-        <dl>
-            <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
-            <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
-            <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
-            <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
-            <dt><label for="email" maxlength="50" value="<? echo $form->value("email"); ?>">Email:</label></dt>
-            <dd><input id="email" type="email" name="email" /><? echo $form->error("email"); ?></dd>
-        </dl>
-        <input type="hidden" name="subjoin" value="1">
-        <input type="submit" value="Join" />
-    </form>
-</fieldset>
+<div class="container_12" style="padding-top: 20px;">
+    <div class="grid_12">
+        <div class="contentHead">
+            <h3>Register</h3>
+        </div>
+        <article class="contentCont"  id="topInfo">
+            <fieldset>
+                <legend>Register</legend>
+                <form id="login" action="../Login/login2.php" method="post">
+                    <dl>
+                        <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
+                        <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
+                        <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
+                        <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
+                        <dt><label for="email" maxlength="50" value="<? echo $form->value("email"); ?>">Email:</label></dt>
+                        <dd><input id="email" type="email" name="email" /><? echo $form->error("email"); ?></dd>
+                    </dl>
+                    <input type="hidden" name="subjoin" value="1">
+                    <input type="submit" value="Join" />
+                </form>
+            </fieldset>
+      </article>
+    </div>
+</div>
+
 
 <?
 }
