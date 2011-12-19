@@ -81,7 +81,7 @@ if($form->num_errors > 0){
         <article class="contentCont"  id="topInfo">
             <fieldset>
                 <legend>Register</legend>
-                <form id="login" action="../Login/login2.php" method="post">
+                <form id="login" action="loginCheck.php" method="post">
                     <dl>
                         <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
                         <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>

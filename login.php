@@ -24,14 +24,28 @@ include("inc/sessionNew.php");
 ?>
         
 		<section id="mainCont">
+
+
+<div class="container_12" style="padding-top: 20px;">
 <?php
-if($session->logged_in){
-   
+if($session->isAdmin()){
+?>
+    <div class="grid_12">
+        <div class="contentHead">
+            <h3>Admin Link</h3>
+        </div>
+        <article class="contentCont"  id="topInfo">
+            <h1><a href="admin/admin.php">CLICKY</a></h1>
+      </article>
+    </div>
+  		</section>
+
+        
+		<footer id="footer">
+<?php
 }
 else{
 ?>
-
-<div class="container_12" style="padding-top: 20px;">
     <div class="grid_12">
         <div class="contentHead">
             <h3>Login</h3>

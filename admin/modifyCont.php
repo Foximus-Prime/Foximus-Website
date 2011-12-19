@@ -11,47 +11,44 @@
  */
 include("../inc/sessionNew.php");
 
-class Content
+class modifyContent
 {
+	var $rs;
    /* Class constructor */
-   function Content(){
+   function modifyContent(){
       global $session;
       /* Make sure administrator is accessing page */
       if(!$session->isAdmin()){
          header("Location: ../index.php");
          return;
       }
+	  
       /* Check what type of form was submitted by Admin */
-      if(isset($_POST['reqData'])){
-         $this->sendData($_POST['contID']);
-      }
-      else if(isset($_POST['sendData'])){
-         $this->saveData($_POST['contID'], $_POST['data']);
+	  if(isset($_POST['sendData'])){
+         $this->saveData($_POST['ID'], $_POST['Data']);
 	  }
       /* Should not get here, redirect to home page */
       else{
          header("Location: ../index.php");
       }
-
-
+	  
    }
-   
-   /**
-    */
-   function sendData($id){
-	   $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = ".$id);
-	   echo mysql_result($rs, 0);
-   }
-   
-   /**
-    */
-   function saveData($id, $cont){
-	   $rs = $database->query("UPDATE `Content` SET `Text` = ".$cont." FROM  WHERE `ID` = ".$id);
-   }
-
+	  
+	  function sendData($id) {
+		  global $database;
+		  $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = $id");
+		  echo mysql_result($rs, 0);
+	  }
+	  
+	  function saveData($id, $data) {
+		  global $database;
+		  $rs = $database->query("UPDATE `Content` SET `Text` = '".$data."' WHERE `ID` = $id");
+		  $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = $id");
+		  echo mysql_result($rs, 0);
+	  }
 };
 
 /* Initialize process */
-$Content = new Content;
+$modifyContent = new modifyContent;
 
 ?>

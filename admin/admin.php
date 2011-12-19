@@ -67,15 +67,59 @@ if(!$session->isAdmin()){
             	<div class="contentHead">
                 	<h3>Content Panel</h3>
                 </div>
-                <article class="contentCont"  id="topInfo">
-                    <form method="post" action="somepage">
-                            <textarea name="content" id="1" style="width:100%">
-                            <?php 
-								$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 1");
-								echo mysql_result($rs, 0);
-							?>
-                            </textarea>
-                    </form>
+                <article class="contentCont"  id="topInfo" style="background:#FFF; color:#000; overflow: auto;">
+                    <ul id="browser" class="filetree">
+                        <li class="closed"><span class="folder">Home Page</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">About Us</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">About Us</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Current Team</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Students</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Mentors</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Website</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">History</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">First Info</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">First Info</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">FRC</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">2012 Game</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Our Robot</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Robot Archive</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">Forums</span>
+                            <ul>
+                                <li><span class="file">Edit via Forum Admin Panel</span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">Media</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Photo Gallery</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Video Archive</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">Resources</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Robot Help</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Website Help</a></span></li>
+                            </ul>
+                        </li>
+                        <li class="closed"><span class="folder">Contact</span>
+                            <ul>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Student Info / Signup</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Mentor Info / Signup</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=1','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Sponsor Info / Signup</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </article>
             </div>
         </div>

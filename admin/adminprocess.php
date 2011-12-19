@@ -41,6 +41,10 @@ class AdminProcess
       else if(isset($_POST['subdelbanned'])){
          $this->procDeleteBannedUser();
       }
+	  /* Admin submitted new user form */
+	  else if(isset($_POST['subnewuser'])){
+         $this->procNewUser();
+      }
       /* Should not get here, redirect to home page */
       else{
          header("Location: ../index.php");

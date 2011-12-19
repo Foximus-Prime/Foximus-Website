@@ -13,6 +13,9 @@ include("../inc/sessionNew.php");
 
 class AdminProcess2
 {
+	var $rs;
+	var $cID;
+	
    /* Class constructor */
    function AdminProcess2(){
       global $session;
@@ -48,6 +51,9 @@ class AdminProcess2
       }
       else if(isset($_GET['delete_banned_user'])){
          $this->procDelBannedUser();
+      }
+	  else if(isset($_GET['edit_content'])){
+         $this->procEditContent($_GET['contentID']);
       }
       /* Should not get here, redirect to home page */
       else{
@@ -301,6 +307,55 @@ class AdminProcess2
                         </form>
                     </fieldset>";
 	   $this->footer();
+	   echo "</body></html>";
+   }
+   
+   function procEditContent($cID){
+		global $database;
+	   echo '<html><head>';
+	   if(filter_var($cID,FILTER_VALIDATE_INT)) {
+		   echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+				<script type="text/javascript" src="../js/mylibs/tiny_mce/tiny_mce_src.js"></script>
+				<script type="text/javascript">
+					$(document).ready(function(){			
+							tinyMCE.init({
+								mode : "textareas",
+								theme : "advanced",
+								plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+								theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+								theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+								theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+								theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage",
+								theme_advanced_resizing : true,
+								theme_advanced_toolbar_location : "top",
+								theme_advanced_toolbar_align : "left",
+								theme_advanced_statusbar_location : "bottom"
+							});
+					});
+					
+					function ajaxSave(id) {
+							var ed = tinyMCE.get(\'content\');
+														
+							ed.setProgressState(1); // Show progress
+							$.post("modifyCont.php", { sendData: 1, ID: id, Data: ed.getContent() }, function(data){
+								ed.setContent(data);
+								ed.setProgressState(0);
+							});
+							
+							return false;
+					}
+					</script>'
+				.'</head><body>';
+			$rs = $database->query("SELECT `Description` FROM `Content` WHERE `ID` = $cID");
+			echo '<h2>'.mysql_result($rs, 0).'</h2>';
+			$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = $cID");
+			echo '<textarea id="content" style="width:100%">'
+				. mysql_result($rs, 0)
+				. '</textarea><input type="submit" value="Save" onClick="javascript:ajaxSave('.$cID.');" />';
+		   $this->footer();
+	   } else {
+			echo 'Get lost you little hacker. Please note('+$_SERVER['REMOTE_ADDR']+') along with some other useful information has been logged =).';   
+	   }
 	   echo "</body></html>";
    }
 

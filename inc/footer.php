@@ -37,45 +37,11 @@
 	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
     
     <?php
-    
 		if($session->isAdmin()) {
-			
 	?>
-			<script type="text/javascript" src="js/mylibs/tiny_mce/tiny_mce_src.js"></script>
-			<script type="text/javascript">
-			$(document).ready(function(){
-					tinyMCE.init({
-						mode : "textareas",
-						theme : "advanced"
-					});
-			});
-			</script>
-            <script type="text/javascript">
-					
-				
-				function ajaxLoad() {
-						var ed = tinyMCE.get('content');
-						var id = tinyMCE.get('id');
-				
-						// Do you ajax call here, window.setTimeout fakes ajax call
-						ed.setProgressState(1); // Show progress
-						$.post("modifyCont.php", { reqData: 1, contID: id },
-						   function(data) {
-							 ed.setProgressState(0); // Hide progress
-							 ed.setContent(data);
-						   });
-						
-				}
-				
-				function ajaxSave() {
-						var ed = tinyMCE.get('content');
-						var id = tinyMCE.get('id');
-						
-						// Do you ajax call here, window.setTimeout fakes ajax call
-						ed.setProgressState(1); // Show progress
-						$.post("test.php", { sendData: 1, contID: id, data: ed }, function(data){ed.setProgressState(0);} );
-				}
-            </script>
+			                <link type="text/css" rel="stylesheet" href="js/mylibs/treeview/jquery.treeview.css">
+				<script type="text/javascript" src="js/mylibs/treeview/jquery.treeview.js"></script>
+                <script type="text/javascript">$("#browser").treeview();</script>
     <?php
 		}
 	?>
