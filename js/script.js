@@ -6,10 +6,9 @@ $(document).ready(function(){
 	
     $("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled (Adds empty span tag after ul.subnav*)  
   
-    $("ul.topnav li a").hover(function() { //When trigger is clicked...  
-  
+    $("ul.topnav li a").hover(function() { 
         //Following events are applied to the subnav itself (moving subnav up and down)  
-        $(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click  
+        $(this).parent().find("ul.subnav").stop(true, true).slideDown('fast').show(); //Drop down the subnav on hover
   
         $(this).parent().hover(function() {  
         }, function(){  
