@@ -68,7 +68,7 @@
                     </li>
                 </ul>
                 <ul id="mainMenuR" class="topnav">
-                    <li><a href="#">Forums</a></li>
+                    <li><a href="forums/">Forums</a></li>
                     <li>
                         <a href="#">Media</a>
                         <ul class="subnav">
