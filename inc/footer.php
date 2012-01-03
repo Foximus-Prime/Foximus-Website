@@ -19,30 +19,10 @@
 
   <!-- JavaScript at the bottom for fast page loading -->
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
-  
-        <!-- load Aviva Slider -->
-	<script src="js/aviaslider/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript"></script>	
-	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
-	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
-    
-	<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
-    
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
     
-    <?php
-		if($session->isAdmin()) {
-	?>
-			                <link type="text/css" rel="stylesheet" href="js/mylibs/treeview/jquery.treeview.css">
-				<script type="text/javascript" src="js/mylibs/treeview/jquery.treeview.js"></script>
-                <script type="text/javascript">$("#browser").treeview();</script>
-    <?php
-		}
-	?>
 
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>

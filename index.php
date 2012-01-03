@@ -46,6 +46,20 @@ include("inc/sessionNew.php");
             </div>
             <div class="clear"></div>
             <div class="container_12" style="padding-top: 20px;">
+            	<div class="grid_12">
+                    <div class="contentHead">
+                        <h3>Countdown</h3>
+                    </div>
+                    <article class="contentCont">
+                   	<?php 
+						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 3");
+						echo mysql_result($rs, 0);
+					?>
+                    </article>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="container_12" style="padding-top: 20px;">
                 <div class="grid_4">
                     <div class="contentHead">
                         <h3>Other Stuffz</h3>
@@ -91,5 +105,15 @@ include("inc/sessionNew.php");
                 </div>
             </div>
             <div class="clear"></div>
-            
+<?php  include("inc/js.php"); ?>
+        <!-- load Aviva Slider -->
+	<script src="js/aviaslider/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript"></script>	
+	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
+	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
+    
+	<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
+    
+    <script type='text/javascript' src='js/mylibs/countdown/jquery.countdown.js'></script>
+    <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>
+    <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
 <?php  include("inc/footer.php"); ?>
