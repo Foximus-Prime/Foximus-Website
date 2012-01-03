@@ -110,4 +110,5 @@ include("inc/sessionNew.php");
                     </div>
                 </div>
             </div>
+<?php  include("inc/js.php"); ?>
 <?php  include("inc/footer.php"); ?>

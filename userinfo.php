@@ -72,9 +72,8 @@ if(strcmp($session->username,$req_user) == 0){
 
         
 		<footer id="footer">
-<?php
-include("inc/footer.php");
-?>
+<?php  include("inc/js.php"); ?>
+<?php  include("inc/footer.php"); ?>
 	</footer>
 
 </div>

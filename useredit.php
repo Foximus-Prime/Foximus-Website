@@ -87,9 +87,8 @@ if($form->num_errors > 0){
 
         
 		<footer id="footer">
-<?php
-include("inc/footer.php");
-?>
+<?php  include("inc/js.php"); ?>
+<?php  include("inc/footer.php"); ?>
 		</footer>
 
 </div>
