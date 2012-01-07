@@ -233,7 +233,8 @@ Also: hot pink! */
 
 /* j.mp/webkit-tap-highlight-color */
 a:link {
-	-webkit-tap-highlight-color: #FF5E99;
+	color:#FFF;
+	text-decoration:none;
 }
 
 /* Make buttons play nice in IE:
@@ -256,7 +257,7 @@ body, select, input, textarea {
 	/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
 	color: #444;
 	/* Set your base font here, to apply evenly */
-	/* font-family: Georgia, serif;  */
+	 font-family: Verdana, Geneva, sans-serif;
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
@@ -264,12 +265,17 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-a, a:active, a:visited {
-	color: #607890;
+a {
+	color:#FFF;
+	text-decoration:none;
 }
-
+a:visted {
+	color:#FFF;
+	text-decoration:none;
+}
 a:hover {
-	color: #036;
+	color:#FFF;
+	text-decoration:underline;
 }
 
 /**
@@ -794,22 +800,13 @@ footer {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	width:430px;
+	width:272px;
 	border:1px solid #c9c9c9;
 }
-#twitter_t {
-	width:405px;
-	height: 44px;
-	background:#c68aeb url(yourimagehere);
-	color:#fff;
-	text-shadow:.5px .5px #333;
-	font-size:18px;
-	font-family:Candara;
-	padding-top:20px;
-	padding-left:25px;
-}
 #twitter_m {
-	width: 400px;
+	width: 242px;
+	height: 250px;
+	overflow: hidden;
 	padding: 0 15px;
 	background:#f7effc;
 }
@@ -821,11 +818,9 @@ footer {
 	padding-top:5px;
 }
 #twitter_update_list {
-	width: 413px;
+	width: 270px;
 	padding: 0;
 	overflow: hidden;
-	font-family: Georgia;
-	font-size: 14px;
 	font-style: italic;
 	color: #31353d;
 	line-height: 16px;
@@ -833,22 +828,20 @@ footer {
 	margin-left:-13px;
 }
 #twitter_update_list li {
-	width: 400px;
+	width: 242px;
 	list-style: none;
 	padding:15px;
 	border-bottom: dotted 1px #ccc;
 }
 #twitter_update_list li a {
-	color:#631891;
+	color:#8A0A0A;
 	text-decoration: none;
 }
 #twitter_update_list li a:hover {
 	color: #31353d;
 }
-#twitter_b {
-	width: 430px;
-	height: 29px;
-	background:#c68aeb url(yourimagehere);
+#twitter_update_list li a:visited {
+	color: #8A0A0A;
 }
 
 /**
