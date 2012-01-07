@@ -51,10 +51,8 @@ include("inc/sessionNew.php");
                         <h3>Countdown</h3>
                     </div>
                     <article class="contentCont">
-                   	<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 3");
-						echo mysql_result($rs, 0);
-					?>
+                        <div id="countdown"></div>
+                        <div id="note"></div>
                     </article>
                 </div>
             </div>
@@ -62,32 +60,35 @@ include("inc/sessionNew.php");
             <div class="container_12" style="padding-top: 20px;">
                 <div class="grid_4">
                     <div class="contentHead">
-                        <h3>Other Stuffz</h3>
+                        <h3>Sponsors</h3>
                     </div>
                     <article class="contentCont" style="height:150px;">
-                        <p>
-                        0.o
-                        </p>
+                   	<?php 
+						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 3");
+						echo mysql_result($rs, 0);
+					?>
                     </article>
                 </div>
                 <div class="grid_4">
                     <div class="contentHead">
-                        <h3>Other Stuffz</h3>
+                        <h3>Current Game</h3>
                     </div>
                     <article class="contentCont" style="height:150px;">
-                        <p>
-                        o.O
-                        </p>
+                   	<?php 
+						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 4");
+						echo mysql_result($rs, 0);
+					?>
                     </article>
                 </div>
                 <div class="grid_4">
                     <div class="contentHead">
-                        <h3>Other Stuffz</h3>
+                        <h3>Twitter</h3>
                     </div>
                     <article class="contentCont" style="height:150px;">
-                        <p>
-                        0.o o.0
-                        </p>
+                   	<?php 
+						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 5");
+						echo mysql_result($rs, 0);
+					?>
                     </article>
                 </div>
             </div>
@@ -106,13 +107,16 @@ include("inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 <?php  include("inc/js.php"); ?>
-        <!-- load Aviva Slider -->
+		<!-- Twitter -->
+	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
+	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&count=4" type="text/javascript"></script>
+        <!-- Aviva Slider -->
 	<script src="js/aviaslider/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript"></script>	
 	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
 	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
-    
+    	<!-- Hover Intent -->
 	<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
-    
+    	<!-- Countdown -->
     <script type='text/javascript' src='js/mylibs/countdown/jquery.countdown.js'></script>
     <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>
     <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
