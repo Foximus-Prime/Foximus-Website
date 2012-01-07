@@ -67,7 +67,7 @@ if(!$session->isAdmin()){
             	<div class="contentHead">
                 	<h3>Content Panel</h3>
                 </div>
-                <article class="contentCont"  id="topInfo" style="background:#FFF; color:#000; overflow: auto;">
+                <article class="contentCont treeCont" id="topInfo" style="background:#FFF; color:#000; overflow: auto;">
                     <ul id="browser" class="filetree">
                         <li class="closed"><span class="folder">Home Page</span>
                             <ul>
@@ -163,6 +163,7 @@ if(!$session->isAdmin()){
 <?php } ?>
 <?php  include("../inc/js.php"); ?>
 			    <link type="text/css" rel="stylesheet" href="js/mylibs/treeview/jquery.treeview.css">
+                <link type="text/css" rel="stylesheet" href="admin/admin.css">
 				<script type="text/javascript" src="js/mylibs/treeview/jquery.treeview.js"></script>
                 <script type="text/javascript">$("#browser").treeview();</script>
 <?php  include("../inc/footer.php"); ?>
