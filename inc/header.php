@@ -61,7 +61,7 @@
                     <li>
                         <a href="#">FRC</a>
                         <ul class="subnav">
-                            <li><a href="#">2012 Game</a></li>
+                            <li><a href="pages/game.php">2012 Game</a></li>
                             <li><a href="#">Our Robot</a></li>
                             <li><a href="#">Robot Archive</a></li>
                         </ul>

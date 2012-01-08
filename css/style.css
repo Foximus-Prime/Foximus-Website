@@ -355,6 +355,12 @@ header {
 	z-index: 7;
 }
 
+.centerH {
+	position:relative;
+	margin:auto;
+	display:block;
+}
+
 #menuCont {
 	background-image: url(http://themrmiller.com/austin/img/redCF.png);
 	background-repeat: repeat-x;

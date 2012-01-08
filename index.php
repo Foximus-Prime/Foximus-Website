@@ -17,6 +17,8 @@ include("inc/sessionNew.php");
   <title>Foximus-Prime</title>
 <?php 
 	include("inc/header.php");
+
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1");
 ?>
         <div class="container_12">
         	<div class="grid_4">
@@ -26,7 +28,6 @@ include("inc/sessionNew.php");
                 <article class="contentCont"  id="topInfo">
                     <p>
 					<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 1");
 						echo mysql_result($rs, 0);
 					?>
                     </p>
@@ -37,8 +38,7 @@ include("inc/sessionNew.php");
                <div class="contentCont" style="padding:0;">
                    <div class="aviaslider" id="custom-fade-slider">
                    	<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 2");
-						echo mysql_result($rs, 0);
+						echo mysql_result($rs, 1);
 					?>
                     </div>
                 </div>
@@ -64,8 +64,7 @@ include("inc/sessionNew.php");
                     </div>
                     <article class="contentCont" style="height:250px;">
                    	<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 3");
-						echo mysql_result($rs, 0);
+						echo mysql_result($rs, 2);
 					?>
                     </article>
                 </div>
@@ -75,8 +74,7 @@ include("inc/sessionNew.php");
                     </div>
                     <article class="contentCont" style="height:250px;">
                    	<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 4");
-						echo mysql_result($rs, 0);
+						echo mysql_result($rs, 3);
 					?>
                     </article>
                 </div>
@@ -86,8 +84,7 @@ include("inc/sessionNew.php");
                     </div>
                     <article class="contentCont" style="height:250px;">
                    	<?php 
-						$rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = 5");
-						echo mysql_result($rs, 0);
+						echo mysql_result($rs, 4);
 					?>
                     </article>
                 </div>
