@@ -233,7 +233,8 @@ Also: hot pink! */
 
 /* j.mp/webkit-tap-highlight-color */
 a:link {
-	-webkit-tap-highlight-color: #FF5E99;
+	color:#FFF;
+	text-decoration:none;
 }
 
 /* Make buttons play nice in IE:
@@ -256,7 +257,7 @@ body, select, input, textarea {
 	/* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
 	color: #444;
 	/* Set your base font here, to apply evenly */
-	/* font-family: Georgia, serif;  */
+	 font-family: Verdana, Geneva, sans-serif;
 }
 
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
@@ -264,12 +265,17 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-a, a:active, a:visited {
-	color: #607890;
+a {
+	color:#FFF;
+	text-decoration:none;
 }
-
+a:visted {
+	color:#FFF;
+	text-decoration:none;
+}
 a:hover {
-	color: #036;
+	color:#FFF;
+	text-decoration:underline;
 }
 
 /**
@@ -299,7 +305,7 @@ body {
 	height: 100%;
 	margin: 0 auto 0 auto;
 	width: 1000px;
-	background-image: url(../img/USFirstLogo.png);
+	background-image: url(http://themrmiller.com/austin/img/USFirstLogo2.png);
 	background-repeat: repeat;
 }
 
@@ -308,14 +314,14 @@ header {
 	height: 150px;
 	margin-left: auto;
 	margin-right: auto;
-	background-image: url(../img/redCF.png);
+	background-image: url(http://themrmiller.com/austin/img/redCF.png);
 	background-repeat: repeat-x;
 }
 
 #container {
 	min-height: 100%;
 	margin: 0;
-	background-image: url(../img/iPadBackgroundTexture.png);
+	background-image: url(http://themrmiller.com/austin/img/iPadBackgroundTexture.png);
 	background-repeat: repeat;
 }
 
@@ -330,7 +336,7 @@ header {
 	left: 50%;
 	margin-left: -274px;
 	top: 0px;
-	background-image: url(../img/fox_FULL.png);
+	background-image: url(http://themrmiller.com/austin/img/fox_FULL.png);
 	width: 548px;
 	height: 151px;
 }
@@ -343,14 +349,20 @@ header {
 	left: 50%;
 	margin-left: -80.5px;
 	top: 0px;
-	background-image: url(../img/foxFace.png);
+	background-image: url(http://themrmiller.com/austin/img/foxFace.png);
 	width: 161px;
 	height: 151px;
 	z-index: 7;
 }
 
+.centerH {
+	position:relative;
+	margin:auto;
+	display:block;
+}
+
 #menuCont {
-	background-image: url(../img/redCF.png);
+	background-image: url(http://themrmiller.com/austin/img/redCF.png);
 	background-repeat: repeat-x;
 	padding: 0;
 	margin: 0;
@@ -380,11 +392,11 @@ header {
 #menuCont ul li {
 	position: relative;
 	display: inline;
-	z-index:57575757;
+	z-index:100;
 }
 
 #menuCont ul li a {
-	z-index:57575757;
+	z-index:100;
 }
 
 
@@ -404,7 +416,7 @@ ul.topnav li a{
 	z-index: 10;
 }
 ul.topnav li:hover{
-	background: url(../img/redCFDark.png) repeat left top;
+	background: url(http://themrmiller.com/austin/img/redCFDark.png) repeat left top;
 }
 ul.topnav li span { /*--Drop down trigger styles--*/
 	position: relative;
@@ -413,7 +425,7 @@ ul.topnav li span { /*--Drop down trigger styles--*/
 	width: 17px;
 	height: 35px;
 	float: left;
-	background: url(../img/subnav_btn.png) no-repeat center top;
+	background: url(http://themrmiller.com/austin/img/subnav_btn.png) no-repeat center top;
 }
 ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
 
@@ -446,11 +458,11 @@ ul.topnav li ul.subnav li{
 html ul.topnav li ul.subnav li a {
 	float: left;
 	width: 145px;
-	background: #333 url(../img/dropdown_linkbg.gif) no-repeat 10px center;
+	background: #333 url(http://themrmiller.com/austin/img/dropdown_linkbg.gif) no-repeat 10px center;
 	padding-left: 20px;
 }
 html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
-	background: #222 url(../img/dropdown_linkbg.gif) no-repeat 10px center;
+	background: #222 url(http://themrmiller.com/austin/img/dropdown_linkbg.gif) no-repeat 10px center;
 }
 
 
@@ -465,7 +477,7 @@ b {
 	padding: 0px;
 	margin: 0px;
 	float: left;
-	background-image: url(../img/L_menu3.png);
+	background-image: url(http://themrmiller.com/austin/img/L_menu3.png);
 	position: relative;
 	height: 67px;
 	width: 26px;
@@ -476,7 +488,7 @@ b {
 	padding: 0px;
 	margin: 0px;
 	float: right;
-	background-image: url(../img/R_menu3.png);
+	background-image: url(http://themrmiller.com/austin/img/R_menu3.png);
 	position: relative;
 	height: 67px;
 	width: 26px;
@@ -484,12 +496,12 @@ b {
 }
 
 .grill {
-	background-image: url(../img/grill.png);
+	background-image: url(http://themrmiller.com/austin/img/grill.png);
 	background-repeat: repeat;
 }
 
 .grill2 {
-	background-image: url(../img/grill2.png);
+	background-image: url(http://themrmiller.com/austin/img/grill2.png);
 	background-repeat: repeat;
 }
 
@@ -572,7 +584,7 @@ footer {
 	padding: 0px;
 	margin: 0px;
 	float: left;
-	background-image: url(../img/lFoot.png);
+	background-image: url(http://themrmiller.com/austin/img/lFoot.png);
 	position: relative;
 	height: 151px;
 	width: 25px;
@@ -584,7 +596,7 @@ footer {
 	padding: 0px;
 	margin: 0px;
 	float: right;
-	background-image: url(../img/rFoot.png);
+	background-image: url(http://themrmiller.com/austin/img/rFoot.png);
 	position: relative;
 	height: 151px;
 	width: 25px;
@@ -593,7 +605,7 @@ footer {
 }
 
 #footCont {
-	background-image: url(../img/redCF2.png);
+	background-image: url(http://themrmiller.com/austin/img/redCF2.png);
 	background-repeat: repeat-x;
 	padding: 0;
 	margin: 0;
@@ -605,7 +617,7 @@ footer {
 }
 
 .footBtm {
-	background-image: url(../img/footBtmL2.png);
+	background-image: url(http://themrmiller.com/austin/img/footBtmL2.png);
 	padding: 0;
 	margin: 0;
 	position: relative;
@@ -625,7 +637,7 @@ footer {
 }
 
 #footBtmC {
-	background-image: url(../img/footBtmC2.png);
+	background-image: url(http://themrmiller.com/austin/img/footBtmC2.png);
 	padding: 0;
 	margin: 0;
 	position: relative;
@@ -637,7 +649,7 @@ footer {
 }
 
 #footBtmCL {
-	background-image: url(../img/footBtmCL2.png);
+	background-image: url(http://themrmiller.com/austin/img/footBtmCL2.png);
 	padding: 0;
 	margin: 0;
 	position: relative;
@@ -648,7 +660,7 @@ footer {
 }
 
 #footBtmCR {
-	background-image: url(../img/footBtmCL2.png);
+	background-image: url(http://themrmiller.com/austin/img/footBtmCL2.png);
 	padding: 0;
 	margin: 0;
 	position: relative;
@@ -744,7 +756,7 @@ footer {
 /* tooltip styling. by default the element to be styled is .tooltip  */
 .tooltip {
 	display:none;
-	background:transparent url(../img/tooltip/black_arrow.png);
+	background:transparent url(http://themrmiller.com/austin/img/tooltip/black_arrow.png);
 	font-size:12px;
 	height:70px;
 	width:160px;
@@ -755,13 +767,13 @@ footer {
 
 /* override the arrow image of the tooltip */
 .tooltip.bottom {
-	background:url(../img/tooltip/black_arrow_bottom.png);
+	background:url(http://themrmiller.com/austin/img/tooltip/black_arrow_bottom.png);
 	padding-top:40px;
 	height:55px;
 }
 
 .tooltip.bottom {
-	background:url(../img/tooltip/black_arrow_bottom.png);
+	background:url(http://themrmiller.com/austin/img/tooltip/black_arrow_bottom.png);
 }
 
 #menuCont ul li a:visited {
@@ -788,6 +800,54 @@ footer {
 	font-weight: bold;
 	color: #FFF;
 	text-decoration: none;	
+}
+
+#twitter {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width:272px;
+	border:1px solid #c9c9c9;
+}
+#twitter_m {
+	width: 242px;
+	height: 250px;
+	overflow: hidden;
+	padding: 0 15px;
+	background:#f7effc;
+}
+#twitter_container {
+	min-height:45px;
+	height:auto !important;
+	height:40px;
+	padding-bottom:5px;
+	padding-top:5px;
+}
+#twitter_update_list {
+	width: 270px;
+	padding: 0;
+	overflow: hidden;
+	font-style: italic;
+	color: #31353d;
+	line-height: 16px;
+	font-weight:bold;
+	margin-left:-13px;
+}
+#twitter_update_list li {
+	width: 242px;
+	list-style: none;
+	padding:15px;
+	border-bottom: dotted 1px #ccc;
+}
+#twitter_update_list li a {
+	color:#8A0A0A;
+	text-decoration: none;
+}
+#twitter_update_list li a:hover {
+	color: #31353d;
+}
+#twitter_update_list li a:visited {
+	color: #8A0A0A;
 }
 
 /**
