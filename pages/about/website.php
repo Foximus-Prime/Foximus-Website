@@ -1,5 +1,5 @@
 <?php 
-include("../inc/sessionNew.php");
+include("../../inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -15,14 +15,11 @@ include("../inc/sessionNew.php");
   <meta charset="utf-8">
 
   <title>Foximus-Prime</title>
-  <base href="../" />
-  
-  <link rel="stylesheet" href="js/mylibs/flipwall/styles.css" type="text/css" media="screen" />
-  
+  <base href="../../" />
 <?php 
-	include("../inc/header.php");
+	include("../../inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 3");
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 8");
 ?>
         <div class="container_12">
         	<div class="grid_8">
@@ -56,8 +53,5 @@ include("../inc/sessionNew.php");
                 </div>
             </div>
             <div class="clear"></div>
-<?php  include("../inc/js.php"); ?>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/mylibs/flipwall/script.js"></script>
-<script type="text/javascript" src="js/mylibs/flipwall/flip/jquery.flip.min.js"></script>
-<?php  include("../inc/footer.php"); ?>
+<?php  include("../../inc/js.php"); ?>
+<?php  include("../../inc/footer.php"); ?>

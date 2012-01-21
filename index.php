@@ -80,7 +80,7 @@ include("inc/sessionNew.php");
                 </div>
                 <div class="grid_4">
                     <div class="contentHead">
-                        <h3><a href="http://twitter.com/#!/FoximusPrime369"><img src="img/twitterIcon.png"/> Twitter</a></h3>
+                        <h3><a href="http://twitter.com/#!/FoximusPrime369"><img src="img/twitterIcon.png"/>&nbsp;Twitter</a></h3>
                     </div>
                     <article class="contentCont" style="height:250px;">
                    	<?php 

@@ -50,20 +50,19 @@
                     <li>
                         <a href="#">About Us</a>
                         <ul class="subnav">
-                            <li><a href="#">Current Team</a></li>
-                            <li><a href="#">Students</a></li>
-                            <li><a href="#">Mentors</a></li>
-                            <li><a href="#">Website</a></li>
-                            <li><a href="#">History</a></li>
+                            <li><a href="pages/about/current.php">Current Team</a></li>
+                            <li><a href="pages/about/sponsors.php">Sponsors</a></li>
+                            <li><a href="pages/about/website.php">Website</a></li>
+                            <li><a href="pages/about/history.php">History</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">FIRST Info</a></li>
+                    <li><a href="#">US FIRST Info</a></li>
                     <li>
                         <a href="#">FRC</a>
                         <ul class="subnav">
-                            <li><a href="pages/game.php">2012 Game</a></li>
-                            <li><a href="#">Our Robot</a></li>
-                            <li><a href="#">Robot Archive</a></li>
+                            <li><a href="pages/frc/game.php">2012 Game</a></li>
+                            <li><a href="pages/frc/robot.php">Our Robot</a></li>
+                            <li><a href="pages/frc/archive.php">Robot Archive</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -72,23 +71,24 @@
                     <li>
                         <a href="#">Media</a>
                         <ul class="subnav">
-                            <li><a href="#">Photo Gallery</a></li>
-                            <li><a href="#">Video Archive</a></li>
+                            <li><a href="pages/media/photos.php">Photo Gallery</a></li>
+                            <li><a href="pages/media/videos.php">Video Archive</a></li>
+                            <li><a href="pages/media/resources.php">Resources</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">Resources</a>
                         <ul class="subnav">
-                            <li><a href="#">Robot Help</a></li>
-                            <li><a href="#">Website Help</a></li>
+                            <li><a href="pages/help/robot.php">Robot Help</a></li>
+                            <li><a href="pages/help/website.php">Website Help</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">Contact</a>
                         <ul class="subnav">
-                            <li><a href="#">Student Info / Signup</a></li>
-                            <li><a href="#">Mentor Info / Signup</a></li>
-                            <li><a href="#">Sponsor Info / Signup</a></li>
+                            <li><a href="pages/contact/student.php">Student Info / Signup</a></li>
+                            <li><a href="pages/contact/mentor.php">Mentor Info / Signup</a></li>
+                            <li><a href="pages/contact/sponsor.php">Sponsor Info / Signup</a></li>
                         </ul>
                     </li>
                 </ul>
