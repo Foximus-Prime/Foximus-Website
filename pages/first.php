@@ -23,7 +23,7 @@ include("../inc/sessionNew.php");
 ?>
         <div class="container_12">
         	<div class="grid_8">
-            	<div class="contentHead"></div>
+            	<div class="contentHead"><h3>What is FIRST?</h3></div>
                 <article class="contentCont">
 					<?php 
 						echo mysql_result($rs, 0);

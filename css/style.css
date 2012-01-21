@@ -327,7 +327,7 @@ header {
 
 #main {
 	overflow:auto;
-	padding-bottom: 87px;
+	padding-bottom: 183px;
 }
 
 .logo {
@@ -536,7 +536,7 @@ b {
 }
 
 #clearfooter {
-	height: 87px;
+	height: 183px;
 }
 
 footer {
@@ -545,13 +545,13 @@ footer {
 	margin-right: auto;
 	bottom: 0;
 	position: relative;
-	margin-top: -87px; /* negative value of footer height */
-	height: 87px;
+	margin-top: -183px; /* negative value of footer height */
+	height: 183px;
 	clear:both;
 }
 
 .push {
-	height: 87px;
+	height: 183px;
 }
 
 .flipV {
