@@ -802,21 +802,21 @@ footer {
 	text-decoration: none;	
 }
 
-#twitter {
+.twitter {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	width:272px;
 	border:1px solid #c9c9c9;
 }
-#twitter_m {
+.twitter_m {
 	width: 242px;
 	height: 250px;
 	overflow: hidden;
 	padding: 0 15px;
 	background:#fff;
 }
-#twitter_container {
+.twitter_container {
 	min-height:45px;
 	height:auto !important;
 	height:40px;

@@ -43,19 +43,7 @@ include("../../inc/sessionNew.php");
             </div>
             </div>
             <div class="clear"></div>
-            <div class="container_12" style="padding-top: 20px;">
-                <div class="grid_12">
-                    <div class="contentHead">
-                        <h3>Badges</h3>
-                    </div>
-                    <article class="contentCont" style="border-bottom-width: 0; height:100px;">
-                        <p>
-                        
-                        </p>
-                    </article>
-                </div>
-            </div>
-            <div class="clear"></div>
+
 <?php  include("../../inc/js.php"); ?>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/mylibs/flipwall/script.js"></script>

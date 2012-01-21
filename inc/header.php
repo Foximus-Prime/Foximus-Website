@@ -99,3 +99,4 @@
     </header>
 <?php flush(); ?>
     <div id="main" class="container_12" role="main">
+    	<div id="gs-overlay">&nbsp;</div>

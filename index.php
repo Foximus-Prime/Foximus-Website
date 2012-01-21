@@ -15,6 +15,8 @@ include("inc/sessionNew.php");
   <meta charset="utf-8">
 
   <title>Foximus-Prime</title>
+  
+    <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
 <?php 
 	include("inc/header.php");
 
@@ -80,7 +82,7 @@ include("inc/sessionNew.php");
                 </div>
                 <div class="grid_4">
                     <div class="contentHead">
-                        <h3><a href="http://twitter.com/#!/FoximusPrime369"><img src="img/twitterIcon.png"/>&nbsp;Twitter</a></h3>
+                        <h3><a href="http://twitter.com/#!/FoximusPrime369"><img alt="Twitter" src="img/twitterIcon.png"/>&nbsp;Twitter</a></h3>
                     </div>
                     <article class="contentCont" style="height:250px;">
                    	<?php 
@@ -90,23 +92,11 @@ include("inc/sessionNew.php");
                 </div>
             </div>
             <div class="clear"></div>
-            <div class="container_12" style="padding-top: 20px;">
-                <div class="grid_12">
-                    <div class="contentHead">
-                        <h3>Badges</h3>
-                    </div>
-                    <article class="contentCont" style="border-bottom-width: 0; height:100px;">
-                        <p>
-                        
-                        </p>
-                    </article>
-                </div>
-            </div>
-            <div class="clear"></div>
+
 <?php  include("inc/js.php"); ?>
 		<!-- Twitter -->
 	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
-	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&count=3" type="text/javascript"></script>
+	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
         <!-- Aviva Slider -->
 	<script src="js/aviaslider/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript"></script>	
 	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
@@ -116,5 +106,4 @@ include("inc/sessionNew.php");
     	<!-- Countdown -->
     <script type='text/javascript' src='js/mylibs/countdown/jquery.countdown.js'></script>
     <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>
-    <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
 <?php  include("inc/footer.php"); ?>
