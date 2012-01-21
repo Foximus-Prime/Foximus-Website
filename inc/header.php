@@ -56,7 +56,7 @@
                             <li><a href="pages/about/history.php">History</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">US FIRST Info</a></li>
+                    <li><a href="pages/first.php">US FIRST Info</a></li>
                     <li>
                         <a href="#">FRC</a>
                         <ul class="subnav">
