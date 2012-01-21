@@ -20,7 +20,7 @@ include("inc/sessionNew.php");
 <?php 
 	include("inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1");
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1 ORDER BY `Area`");
 ?>
         <div class="container_12">
         	<div class="grid_4">
