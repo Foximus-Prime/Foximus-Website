@@ -41,5 +41,5 @@ include("../../inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 
-<?php  include("../../inc/js.php"); ?>
-<?php  include("../../inc/footer.php"); ?>
+<?php  include("../../inc/js.php"); 
+	   include("../../inc/footer.php"); ?>

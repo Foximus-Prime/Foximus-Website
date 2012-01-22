@@ -46,7 +46,7 @@
             <div id="menuR"></div>
             <div id="menuCont">
                 <ul id="mainMenuL" class="topnav">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="http://themrmiller.com/austin">Home</a></li>
                     <li>
                         <a href="#">About Us</a>
                         <ul class="subnav">
