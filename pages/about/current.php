@@ -64,7 +64,7 @@ include("../../inc/sessionNew.php");
 				}
 				if($count > 0) {
 		?>
-                <div class="clubMember <?php if($count > 1) { echo "subTeamLeader"; } ?>">
+                <div class="clubMember <?php if($count == 2) { echo "subTeamLeader"; } else if($count > 2) { echo "subTeamMentor"; } ?>">
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>

@@ -1,4 +1,4 @@
 <?php
 header("Content-Type: image/png");
-include(rand(1,4).".png");
+include(mt_rand(1,4).".png");
 ?>

@@ -19,12 +19,10 @@ include("inc/sessionNew.php");
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Foximus-Prime</title>
+  	<link rel="stylesheet" type="text/css" media="all" href="js/mylibs/niceforms/niceforms-default.css" />
 <?php
 	include("inc/header.php");
 ?>
-        
-		<section id="mainCont">
-
 
 <div class="container_12" style="padding-top: 20px;">
     <div class="grid_12">
@@ -74,26 +72,39 @@ else{
 if($form->num_errors > 0){
    echo "<p class=\"errors\">".$form->num_errors." error(s) found</p>";
 }
-?>
+?>		<form id="login" action="loginCheck.php" method="post" class="niceform">
 			<fieldset>
-                <legend>Register</legend>
-                <form id="login" action="loginCheck.php" method="post">
+                <legend>Personal Info</legend>
                     <dl>
-                        <dt><label for="fname" maxlength="30" value="<? echo $form->value("fname"); ?>">First Name:</label></dt>
+                        <dt><label for="fname" maxlength="200" value="<? echo $form->value("fname"); ?>">First Name:</label></dt>
                         <dd><input id="fname" type="text" name="fname" /><? echo $form->error("fname"); ?></dd>
-                        <dt><label for="lname" maxlength="30" value="<? echo $form->value("lname"); ?>">Last Name:</label></dt>
+                    </dl>
+                    <dl>
+                        <dt><label for="lname" maxlength="200" value="<? echo $form->value("lname"); ?>">Last Name:</label></dt>
                         <dd><input id="lname" type="text" name="lname" /><? echo $form->error("lname"); ?></dd>
+                    </dl>
+            </fieldset>
+			<fieldset>
+                <legend>Preferences</legend>
+                    <dl>
                         <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
                         <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
+                    </dl>
+              <dl>
                         <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
                         <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
-                        <dt><label for="email" maxlength="50" value="<? echo $form->value("email"); ?>">Email:</label></dt>
-                        <dd><input id="email" type="email" name="email" /><? echo $form->error("email"); ?></dd>
                     </dl>
-                    <input type="hidden" name="subjoin" value="1">
-                    <input type="submit" value="Join" />
-                </form>
+                    <p>&nbsp;</p>
+                    <dl>
+                      <dt><label for="email" maxlength="200" value="<? echo $form->value("email"); ?>">Email:</label></dt>
+                        <dd><input id="email" type="text" name="email" /><? echo $form->error("email"); ?></dd>
+              </dl>
             </fieldset>
+            <fieldset class="action">
+                <input type="hidden" name="subjoin" value="1">
+                <input type="submit" name="submit" id="submit" value="Submit" />
+            </fieldset>
+        </form>
             <?php } ?>
       </article>
     </div>
@@ -101,6 +112,9 @@ if($form->num_errors > 0){
 <div class="clear"></div>
 <?php
 include("inc/js.php");
+?>
+<script language="javascript" type="text/javascript" src="js/mylibs/niceforms/niceforms.js"></script>
+<?php
 include("inc/footer.php");
 ?>
 
