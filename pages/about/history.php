@@ -19,7 +19,7 @@ include("../../inc/sessionNew.php");
 <?php 
 	include("../../inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 9 ORDER BY `Area`");
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 7 ORDER BY `Area`");
 ?>
         <div class="container_12">
         	<div class="grid_8">
