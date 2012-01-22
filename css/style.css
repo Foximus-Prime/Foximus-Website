@@ -325,6 +325,10 @@ header {
 	background-repeat: repeat;
 }
 
+#mainCont {
+	z-index:3;
+}
+
 #main {
 	overflow:auto;
 	padding-bottom: 183px;
@@ -399,7 +403,41 @@ header {
 	z-index:100;
 }
 
+.subTeamLeader {
+	background-image: linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
+	background-image: -o-linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
+	background-image: -moz-linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
+	background-image: -webkit-linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
+	background-image: -ms-linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		right bottom,
+		left top,
+		color-stop(0.17, rgb(0,0,0)),
+		color-stop(0.6, rgb(122,0,0)),
+		color-stop(0.8, rgb(179,0,0))
+	);
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
 
+.clubMember {
+	padding: 10px;
+	width: 130px;
+	height:162px;
+	position:relative;
+	display:inline;
+	text-align:center;
+	float:left;
+}
+
+.clubMember img {
+	width:130px;
+	height:130px;
+	position:relative;
+}
 
 ul.topnav li {
 	float: left;
@@ -540,6 +578,7 @@ b {
 }
 
 footer {
+	z-index: 0;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -684,6 +723,7 @@ footer {
 	border-right-color: #8A0A0A;
 	border-bottom-color: #8A0A0A;
 	border-left-color: #8A0A0A;
+	overflow:hidden;
 }
 
 .contentHead {

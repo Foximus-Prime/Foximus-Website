@@ -19,27 +19,70 @@ include("../../inc/sessionNew.php");
 <?php 
 	include("../../inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 6 ORDER BY `Area`");
+	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user` WHERE `Team` > 0");
 ?>
         <div class="container_12">
-        	<div class="grid_8">
-            	<div class="contentHead"></div>
-                <article class="contentCont">
-					<?php 
-						echo mysql_result($rs, 0);
-					?>
+        
+        <?php
+			$msresult = array();
+			$cache = array();
+			for($i = 0; $i < mysql_num_rows($rs); $i++) {
+				$q = 0;
+				$msresult[$i] = mysql_fetch_array($rs, MYSQL_NUM);
+				while(intval(substr((string)$msresult[$i][2],$q,$q+1)) != 0) {
+					$cache[$i][$q] = intval(substr((string)$msresult[$i][2],$q,$q+1));
+					$q++;
+				}
+			}
+		?>
+        
+        
+        
+        
+        
+            <div class="grid_12">
+            	<div class="contentHead"><h3>Programming Team</h3></div>
+                <article class="contentCont" style="width:916px;">
+                <?php 
+				/*echo $msresult[0][0]." ".$msresult[0][1]." is on Team #".$msresult[0][2];
+				echo substr((string)$msresult[0][2],0,1);
+				echo intval(substr((string)$msresult[0][2],0,1));
+				echo $cache[0][0];*/
+				?>
+		<?php	
+			$last = count($arr_nav) - 1;
+
+			foreach ($cache as $i => $row)
+			{
+				$isFirst = ($i == 0);
+				$isLast = ($i == $last);
+				$count = 0;
+				for($g = 0; $g < count($cache[$i]); $g++) {
+					if($cache[$i][$g] == 1) {
+						$count++;
+					}
+				}
+				if($count > 0) {
+		?>
+                <div class="clubMember <?php if($count > 1) { echo "subTeamLeader"; } ?>">
+                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
+                </div>
+        <?php
+				}
+			}
+		?>
                 </article>
             </div>
-            <div class="grid_4">
-               <div class="contentHead"></div>
-               <div class="contentCont">
-                   	<?php 
-						echo mysql_result($rs, 1);
-					?>
-                </div>
-            </div>
-            </div>
-            <div class="clear"></div>
+            
+            
+
+
+
+
+
+        </div>
+        <div class="clear"></div>
 
 <?php  include("../../inc/js.php"); ?>
 <?php  include("../../inc/footer.php"); ?>

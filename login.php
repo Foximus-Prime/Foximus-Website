@@ -38,10 +38,7 @@ if($session->isAdmin()){
             <h1><a href="admin/admin.php">CLICKY</a></h1>
       </article>
     </div>
-  		</section>
-
-        
-		<footer id="footer">
+<div id="clear"></div>
 <?php
 }
 else{
@@ -69,15 +66,12 @@ else{
       </article>
     </div>
 </div>
-  		</section>
-
-        
-		<footer id="footer">
+<div id="clear"></div>
 <?php
 }
+include("inc/js.php");
 include("inc/footer.php");
 ?>
-		</footer>
 
 </div>
 </body>

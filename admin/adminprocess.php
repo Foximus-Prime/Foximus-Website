@@ -75,6 +75,29 @@ class AdminProcess
    }
    
    /**
+    * procUpdateTeam - If the submitted username is correct,
+    * their team is updated according to the admin's
+    * request.
+    */
+   function procUpdateTeam(){
+      global $session, $database, $form;
+      /* Username error checking */
+      $subuser = $this->checkUsername("upduser");
+      
+      /* Errors exist, have user correct them */
+      if($form->num_errors > 0){
+         $_SESSION['value_array'] = $_POST;
+         $_SESSION['error_array'] = $form->getErrorArray();
+         header("Location: ".$session->referrer);
+      }
+      /* Update user level */
+      else{
+         $database->updateUserField($subuser, "Team", (int)$_POST['updteam']);
+         header("Location: ".$session->referrer);
+      }
+   }
+   
+   /**
     * procDeleteUser - If the submitted username is correct,
     * the user is deleted from the database.
     */

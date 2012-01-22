@@ -249,9 +249,40 @@ class Session
     * 1. If no errors were found, it registers the new user and
     * returns 0. Returns 2 if registration failed.
     */
-   function register($subuser, $subpass, $subemail){
+   function register($subuser, $subfname, $sublname, $subpass, $subemail){
       global $database, $form, $mailer;  //The database, form and mailer object
-      
+	  
+	  /* Name Error Checking */
+	  $field = "fname";
+	  if(!$subfname || strlen($subfname = trim($subfname)) == 0){
+         $form->setError($field, "* First name not entered");
+      } else {
+		  /* Spruce up first name, check length */
+         $subfname = stripslashes($subfname);
+         if(strlen($subfname) > 200){
+            $form->setError($field, "* First name above 200 characters");
+         }
+         /* Check if first name contains other characters */
+         else if(!eregi("^([a-z])+$", $subfname)){
+            $form->setError($field, "* First name must be letters only.");
+         }
+	  }
+	  $field = "lname";
+	  if(!$sublname || strlen($sublname = trim($sublname)) == 0){
+         $form->setError($field, "* Last name not entered");
+      } else {
+		  /* Spruce up last name, check length */
+         $sublname = stripslashes($sublname);
+         if(strlen($sublname) > 200){
+            $form->setError($field, "* Last name above 200 characters");
+         }
+         /* Check if last name contains other characters */
+         else if(!eregi("^([a-z])+$", $sublname)){
+            $form->setError($field, "* Last name must be letters only.");
+         }
+	  }      
+	  
+	  
       /* Username error checking */
       $field = "user";  //Use field name for username
       if(!$subuser || strlen($subuser = trim($subuser)) == 0){
@@ -329,7 +360,7 @@ class Session
       }
       /* No errors, add the new account to the */
       else{
-         if($database->addNewUser($subuser, $subpass, $subemail)){
+         if($database->addNewUser($subuser, $subfname, $sublname, $subpass, $subemail)){
             if(EMAIL_WELCOME){
                $mailer->sendWelcome($subuser,$subemail,$subpass);
             }

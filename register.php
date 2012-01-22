@@ -1,13 +1,6 @@
 <?php
 include("inc/sessionNew.php");
 ?>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Fluid Logins - Register</title>
-<?php
-include("inc/sessionNew.php");
-?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
@@ -31,6 +24,15 @@ include("inc/sessionNew.php");
 ?>
         
 		<section id="mainCont">
+
+
+<div class="container_12" style="padding-top: 20px;">
+    <div class="grid_12">
+        <div class="contentHead">
+            <h3>Register</h3>
+        </div>
+        <article class="contentCont"  id="topInfo">
+        
 <?
 /**
  * The user is already logged in, not allowed to register.
@@ -73,16 +75,14 @@ if($form->num_errors > 0){
    echo "<p class=\"errors\">".$form->num_errors." error(s) found</p>";
 }
 ?>
-<div class="container_12" style="padding-top: 20px;">
-    <div class="grid_12">
-        <div class="contentHead">
-            <h3>Register</h3>
-        </div>
-        <article class="contentCont"  id="topInfo">
-            <fieldset>
+			<fieldset>
                 <legend>Register</legend>
                 <form id="login" action="loginCheck.php" method="post">
                     <dl>
+                        <dt><label for="fname" maxlength="30" value="<? echo $form->value("fname"); ?>">First Name:</label></dt>
+                        <dd><input id="fname" type="text" name="fname" /><? echo $form->error("fname"); ?></dd>
+                        <dt><label for="lname" maxlength="30" value="<? echo $form->value("lname"); ?>">Last Name:</label></dt>
+                        <dd><input id="lname" type="text" name="lname" /><? echo $form->error("lname"); ?></dd>
                         <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
                         <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
                         <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
@@ -94,21 +94,15 @@ if($form->num_errors > 0){
                     <input type="submit" value="Join" />
                 </form>
             </fieldset>
+            <?php } ?>
       </article>
     </div>
 </div>
-
-
-<?
-}
+<div class="clear"></div>
+<?php
+include("inc/js.php");
+include("inc/footer.php");
 ?>
-  		</section>
-
-        
-		<footer id="footer">
-<?php  include("inc/js.php"); ?>
-<?php  include("inc/footer.php"); ?>
-		</footer>
 
 </div>
 </body>

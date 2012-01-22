@@ -150,7 +150,7 @@ class MySQLDB
     * info into the database. Appropriate user level is set.
     * Returns true on success, false otherwise.
     */
-   function addNewUser($username, $password, $email){
+   function addNewUser($username, $fname, $lname, $password, $email){
       $time = time();
       $ulevel = USER_LEVEL;
 	  $ip = $_SERVER['REMOTE_ADDR'];
@@ -159,7 +159,7 @@ class MySQLDB
 	  $r = mysql_query($q, $this->connection);
 	  $password = mysql_result($r, 0);
 
-      $q = "INSERT INTO ".TBL_USERS." (Name, Pass, Permisions, Email, Timestamp, IP) VALUES ('$username', '$password', '$ulevel', '$email', '$time', '$ip')";
+      $q = "INSERT INTO ".TBL_USERS." (Name, First_Name, Last_Name, Pass, Permisions, Email, Timestamp, IP) VALUES ('$username', '$fname', '$lname','$password', '$ulevel', '$email', '$time', '$ip')";
       return mysql_query($q, $this->connection);
    }
    

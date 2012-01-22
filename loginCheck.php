@@ -94,9 +94,11 @@ class Process
       /* Convert username to all lowercase (by option) */
       if(ALL_LOWERCASE){
          $_POST['user'] = strtolower($_POST['user']);
+		 $_POST['fname'] = strtolower($_POST['fname']);
+		 $_POST['lname'] = strtolower($_POST['lname']);
       }
       /* Registration attempt */
-      $retval = $session->register($_POST['user'], $_POST['pass'], $_POST['email']);
+      $retval = $session->register($_POST['user'], $_POST['fname'], $_POST['lname'], $_POST['pass'], $_POST['email']);
       
       /* Registration Successful */
       if($retval == 0){
