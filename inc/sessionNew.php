@@ -267,6 +267,7 @@ class Session
             $form->setError($field, "* First name must be letters only.");
          }
 	  }
+	  $subfname = ucfirst(strtolower($subfname));
 	  $field = "lname";
 	  if(!$sublname || strlen($sublname = trim($sublname)) == 0){
          $form->setError($field, "* Last name not entered");
@@ -281,7 +282,7 @@ class Session
             $form->setError($field, "* Last name must be letters only.");
          }
 	  }      
-	  
+	  $sublname = ucfirst(strtolower($sublname));
 	  
       /* Username error checking */
       $field = "user";  //Use field name for username
