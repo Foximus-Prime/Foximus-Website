@@ -19,7 +19,7 @@ include("../../inc/sessionNew.php");
 <?php 
 	include("../../inc/header.php");
 
-	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user` WHERE `Team` > 0");
+	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user` WHERE `Team` > 0 ORDER BY LENGTH(Team) DESC");
 ?>
         <div class="container_12">
         
@@ -34,7 +34,6 @@ include("../../inc/sessionNew.php");
 					$q++;
 				}
 			}
-			
 			
 			$count = array();
 			
