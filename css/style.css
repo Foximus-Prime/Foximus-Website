@@ -403,6 +403,10 @@ header {
 	z-index:100;
 }
 
+.paddingTop {
+    padding-top: 20px;
+}
+
 .subTeamLeader {
 	background-image: linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
 	background-image: -o-linear-gradient(right bottom, rgb(0,0,0) 17%, rgb(122,0,0) 60%, rgb(179,0,0) 80%);
