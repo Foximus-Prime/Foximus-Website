@@ -154,8 +154,10 @@ if(!$session->isAdmin()){
                 	<h3> Panel</h3>
                 </div>
                 <article class="contentCont"  id="topInfo">
-                    <p>
-                    </p>
+                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?edit_roster=1','', 'width=550, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        	<input style="display:none;" type="text" value="1" />
+                            <input type="image" src="img/icons/change_user_permisions.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                        </form>
                 </article>
             </div>
         </div>

@@ -55,6 +55,9 @@ class AdminProcess2
 	  else if(isset($_GET['edit_content'])){
          $this->procEditContent($_GET['contentID']);
       }
+	  else if(isset($_GET['edit_roster'])){
+         $this->procUpdateTeamRoster();
+      }
       /* Should not get here, redirect to home page */
       else{
          header("Location: ../index.php");
@@ -308,6 +311,39 @@ class AdminProcess2
                     </fieldset>";
 	   $this->footer();
 	   echo "</body></html>";
+   }
+   
+  /**
+    */
+   function procUpdateTeamRoster(){
+	   	echo "<html><head><link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"../js/mylibs/niceforms/niceforms-default.css\" /></head><body>";
+	   	//modifyCont.php
+		global $database;
+	   	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team`, `Name` FROM `user` WHERE `Team` > 0");
+		$msresult = array();
+		$cache = array();
+		for($i = 0; $i < mysql_num_rows($rs); $i++) {
+			$msresult[$i] = mysql_fetch_array($rs, MYSQL_NUM);
+			for($q = 0; $q < strlen(strval($msresult[$i][2])); $q++) {
+				$cache[$i][$q] = intval(substr(strval($msresult[$i][2]),$q,1),16);
+			}
+		}
+		echo "<form id=\"updateRoster\" action=\"modifyCont.php\" method=\"post\" class=\"niceform\">
+			<fieldset>
+                <legend>Roster</legend>
+                    <dl>
+                        <dt><label for=\"fname\" value=\"\">Current Member List:</label></dt>
+                        <dd>
+							<select multiple=\"multiple\" name=\"cRoster\">";
+								for($i = 0; $i < count($cache);$i++) {
+									echo "<option value=\"".$msresult[$i][3]."\">".$msresult[$i][0]." ".$msresult[$i][1]."</option>";
+								}
+		echo				"</select>
+						</dd>
+                    </dl>
+            </fieldset>";
+	   	$this->footer();
+	   	echo "</body><script language=\"javascript\" type=\"text/javascript\" src=\"../js/mylibs/niceforms/niceforms.js\"></script></html>";
    }
    
    function procEditContent($cID){

@@ -41,10 +41,6 @@ class AdminProcess
       else if(isset($_POST['subdelbanned'])){
          $this->procDeleteBannedUser();
       }
-	  /* Admin submitted new user form */
-	  else if(isset($_POST['subnewuser'])){
-         $this->procNewUser();
-      }
       /* Should not get here, redirect to home page */
       else{
          header("Location: ../index.php");
@@ -70,29 +66,6 @@ class AdminProcess
       /* Update user level */
       else{
          $database->updateUserField($subuser, "Permisions", (int)$_POST['updlevel']);
-         header("Location: ".$session->referrer);
-      }
-   }
-   
-   /**
-    * procUpdateTeam - If the submitted username is correct,
-    * their team is updated according to the admin's
-    * request.
-    */
-   function procUpdateTeam(){
-      global $session, $database, $form;
-      /* Username error checking */
-      $subuser = $this->checkUsername("upduser");
-      
-      /* Errors exist, have user correct them */
-      if($form->num_errors > 0){
-         $_SESSION['value_array'] = $_POST;
-         $_SESSION['error_array'] = $form->getErrorArray();
-         header("Location: ".$session->referrer);
-      }
-      /* Update user level */
-      else{
-         $database->updateUserField($subuser, "Team", (int)$_POST['updteam']);
          header("Location: ".$session->referrer);
       }
    }
