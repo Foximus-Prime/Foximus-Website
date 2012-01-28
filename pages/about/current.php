@@ -19,31 +19,33 @@ include("../../inc/sessionNew.php");
 <?php 
 	include("../../inc/header.php");
 
-	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user` WHERE `Team` > 0 ORDER BY LENGTH(Team) DESC");
+	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user` ORDER BY LENGTH(Team) DESC");
 ?>
         <div class="container_12">
         
         <?php
 			$msresult = array();
 			$cache = array();
+			$count = array();
 			for($i = 0; $i < mysql_num_rows($rs); $i++) {
 				$q = 0;
 				$msresult[$i] = mysql_fetch_array($rs, MYSQL_NUM);
 				while(intval(substr(strval($msresult[$i][2]),$q,1),16) > 0) {
-					$cache[$i][$q] = intval(substr(strval($msresult[$i][2]),$q,1),16);
+					$temp = intval(substr(strval($msresult[$i][2]),$q,1),16);
+					$cache[$i][$q] = $temp;
+					$count[$i][$temp]++;
 					$q++;
 				}
 			}
 			
-			$count = array();
 			
-			foreach ($cache as $i => $row)
+			/*foreach ($cache as $i => $row)
 				for($t = 0; $t < 17; $t++) 
 					for($r = 0; $r<count($cache[$i]); $r++)
 						if ($cache[$i][$r] == $t)
 							$count[$i][$t]++;
 							
-							
+							*/
 							
 							
 		/* List of team numbers:
@@ -67,7 +69,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -79,7 +81,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -91,7 +93,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -103,7 +105,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -115,7 +117,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -127,7 +129,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -139,7 +141,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -151,7 +153,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -163,7 +165,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             
@@ -175,7 +177,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
 
@@ -187,7 +189,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
             <div class="grid_12 paddingTop">
@@ -198,7 +200,7 @@ include("../../inc/sessionNew.php");
                     <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
-        <?php } } ?>
+        <?php } } flush();?>
                 </article>
             </div>
         </div>
