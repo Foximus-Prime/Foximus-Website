@@ -319,7 +319,7 @@ class AdminProcess2
 	   	echo "<html><head><link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"../js/mylibs/niceforms/niceforms-default.css\" /></head><body>";
 	   	//modifyCont.php
 		global $database;
-	   	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team`, `Name` FROM `user` WHERE `Team` > 0");
+	   	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team`, `Name` FROM `user`");
 		$msresult = array();
 		$cache = array();
 		for($i = 0; $i < mysql_num_rows($rs); $i++) {
@@ -328,18 +328,38 @@ class AdminProcess2
 				$cache[$i][$q] = intval(substr(strval($msresult[$i][2]),$q,1),16);
 			}
 		}
+		/* List of team numbers:
+		1 => "Programming", 2 => "Electrical", 3 => "Build",
+		4 => "Communications/ Awards", 5 => "Pit",
+		6 => "Party", 7 => "Safety", 8 => "Scout",
+		9 => "Analyze", 10 => "Drive", 11 => "Fundraising",
+		12 => "Anamation"
+		*/
+		$team_ids = array(1 => "Programming", 2 => "Electrical", 3 => "Build", 4 => "Communications/ Awards", 5 => "Pit",
+			6 => "Party", 7 => "Safety", 8 => "Scout", 9 => "Analyze", 10 => "Drive", 11 => "Fundraising", 12 => "Anamation");
+			
 		echo "<form id=\"updateRoster\" action=\"modifyCont.php\" method=\"post\" class=\"niceform\">
 			<fieldset>
                 <legend>Roster</legend>
                     <dl>
-                        <dt><label for=\"fname\" value=\"\">Current Member List:</label></dt>
+                        <dt><label for=\"cRoster[]\">Current Member List:</label></dt>
                         <dd>
-							<select multiple=\"multiple\" name=\"cRoster\">";
+							<select multiple=\"multiple\" name=\"cRoster[]\">";
 								for($i = 0; $i < count($cache);$i++) {
 									echo "<option value=\"".$msresult[$i][3]."\">".$msresult[$i][0]." ".$msresult[$i][1]."</option>";
 								}
 		echo				"</select>
 						</dd>
+                        <dt><label for=\"cTeams[]\">Teams:</label></dt>
+                        <dd>
+							<select multiple=\"multiple\" name=\"cTeams[]\">";
+								for($i = 1; $i < count($team_ids) + 1;$i++) {
+									echo "<option value=\"".$i."\">".$team_ids[$i]."</option>";
+								}
+		echo				"</select>
+						</dd>
+						<input type=\"submit\" name=\"setTeam\" id=\"setTeam\" value=\"Set Teams\" />
+                        <input type=\"submit\" name=\"submit\" id=\"submit\" value=\"Submit\" />
                     </dl>
             </fieldset>";
 	   	$this->footer();

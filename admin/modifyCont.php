@@ -26,6 +26,14 @@ class modifyContent
       /* Check what type of form was submitted by Admin */
 	  if(isset($_POST['sendData'])){
          $this->saveData($_POST['ID'], $_POST['Data']);
+	  } else if(isset($_POST['setTeam'])) {
+		 $this->setTeam($_POST['cRoster'],$_POST['cTeams']);
+	  } else if(isset($_POST['removeTeam'])) {
+		  
+	  } else if(isset($_POST['makeLead'])) {
+		  
+	  } else if(isset($_POST['makeMentor'])) {
+		  
 	  }
       /* Should not get here, redirect to home page */
       else{
@@ -33,16 +41,35 @@ class modifyContent
       }
 	  
    }
+   
+	  function setTeam($array1,$array2) {
+		  global $database;
+		  for($i = 0; $i < count($array1); $i++){
+			  	$a = $array1[$i];
+			  	$rs = $database->query("SELECT Team FROM `user` WHERE Name = '$a'");
+				
+				if(mysql_result($rs, 0) == 0)
+					$rs2 = "";
+				else
+					$rs2 = "".mysql_result($rs, 0);
+					
+				for($h = 0; $h < count($array2); $h++){
+					$rs2 = $rs2."".dechex(intval($array2[$h]));
+				}
+				$database->query("UPDATE `user` SET Team = ".$rs2." WHERE Name = '$a'");
+				header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
+		  }
+	  }
 	  
 	  function sendData($id) {
 		  global $database;
-		  $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = $id");
+		  $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = '$id'");
 		  echo mysql_result($rs, 0);
 	  }
 	  
 	  function saveData($id, $data) {
 		  global $database;
-		  $rs = $database->query("UPDATE `Content` SET `Text` = '".$data."' WHERE `ID` = $id");
+		  $rs = $database->query("UPDATE `Content` SET `Text` = '".$data."' WHERE `ID` = '$id'");
 		  $rs = $database->query("SELECT `Text` FROM `Content` WHERE `ID` = $id");
 		  echo mysql_result($rs, 0);
 	  }
