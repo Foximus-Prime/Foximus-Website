@@ -45,8 +45,8 @@ class modifyContent
 	  function setTeam($array1,$array2) {
 		  global $database;
 		  for($i = 0; $i < count($array1); $i++){
-			  	$a = $array1[$i];
-			  	$rs = $database->query("SELECT Team FROM `user` WHERE Name = '$a'");
+			  	$change = false;
+			  	$rs = $database->query("SELECT Team FROM `user` WHERE Name = '$array1[$i]'");
 				
 				if(mysql_result($rs, 0) == 0)
 					$rs2 = "";
@@ -54,11 +54,18 @@ class modifyContent
 					$rs2 = "".mysql_result($rs, 0);
 					
 				for($h = 0; $h < count($array2); $h++){
-					$rs2 = $rs2."".dechex(intval($array2[$h]));
+					$team = dechex(intval($array2[$h]));
+					if(!strpos(mysql_result($rs, 0), $team)) {
+						$rs2 = $rs2."".$team;
+						$change = true;
+					}
 				}
-				$database->query("UPDATE `user` SET Team = ".$rs2." WHERE Name = '$a'");
-				header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
+				if($change)
+					$database->query("UPDATE `user` SET `Team` = '$rs2' WHERE Name = '$array1[$i]'");
 		  }
+		  echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1\">";
+		  echo "Redirect in 2...";
+		  //header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
 	  }
 	  
 	  function sendData($id) {

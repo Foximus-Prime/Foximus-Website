@@ -346,7 +346,9 @@ class AdminProcess2
                         <dd>
 							<select multiple=\"multiple\" name=\"cRoster[]\">";
 								for($i = 0; $i < count($cache);$i++) {
-									echo "<option value=\"".$msresult[$i][3]."\">".$msresult[$i][0]." ".$msresult[$i][1]."</option>";
+									if($msresult[$i][3] != "Admin") {
+										echo "<option value=\"".$msresult[$i][3]."\">".$msresult[$i][0]." ".$msresult[$i][1]."</option>";
+									}
 								}
 		echo				"</select>
 						</dd>
@@ -358,8 +360,10 @@ class AdminProcess2
 								}
 		echo				"</select>
 						</dd>
-						<input type=\"submit\" name=\"setTeam\" id=\"setTeam\" value=\"Set Teams\" />
-                        <input type=\"submit\" name=\"submit\" id=\"submit\" value=\"Submit\" />
+						<fieldset class=\"action\">
+                			<input type=\"submit\" name=\"setTeam\" id=\"setTeam\" value=\"Add to Team(s)\" />
+                        	<input type=\"submit\" name=\"removeTeam\" id=\"removeTeam\" value=\"Remove from Team(s)\" />
+            			</fieldset>
                     </dl>
             </fieldset>";
 	   	$this->footer();
