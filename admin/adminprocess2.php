@@ -364,6 +364,14 @@ class AdminProcess2
                 			<input type=\"submit\" name=\"setTeam\" id=\"setTeam\" value=\"Add to Team(s)\" />
                         	<input type=\"submit\" name=\"removeTeam\" id=\"removeTeam\" value=\"Remove from Team(s)\" />
             			</fieldset>
+						<fieldset class=\"action\">
+                			<input type=\"submit\" name=\"makeLeader\" id=\"makeLeader\" value=\"Make Team(s) Leader\" />
+                        	<input type=\"submit\" name=\"removeLeader\" id=\"removeLeader\" value=\"Remove Team(s) Leadership\" />
+            			</fieldset>
+						<fieldset class=\"action\">
+                			<input type=\"submit\" name=\"makeMentor\" id=\"makeMentor\" value=\"Make Team(s) Mentor\" />
+                        	<input type=\"submit\" name=\"removeMentor\" id=\"removeMentor\" value=\"Remove Team(s) Mentorship\" />
+            			</fieldset>
                     </dl>
             </fieldset>";
 	   	$this->footer();
