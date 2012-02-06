@@ -4,11 +4,6 @@
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/Foximus/favicon.ico">
-  <link rel="apple-touch-icon" href="/Foximus/apple-touch-icon.png">
-
-
   <!-- CSS: implied media="all" -->
   <link type="text/css" rel="stylesheet" href="css/style.css?v=3">
   <link type="text/css" rel="stylesheet" href="css/960.css">
@@ -71,26 +66,19 @@
                     <li>
                         <a href="#">Media</a>
                         <ul class="subnav">
-                            <li><a href="pages/media/photos.php">Photo Gallery</a></li>
-                            <li><a href="pages/media/videos.php">Video Archive</a></li>
+                            <li><a href="gallery/">Photo Gallery</a></li>
+                            <li><a href="http://www.youtube.com/user/FoximusPrime3695?feature=mhee">Video Archive</a></li>
                             <li><a href="pages/media/resources.php">Resources</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">Resources</a>
                         <ul class="subnav">
-                            <li><a href="pages/help/robot.php">Robot Help</a></li>
-                            <li><a href="pages/help/website.php">Website Help</a></li>
+                            <li><a href="http://www.chiefdelphi.com/forums/index.php?">Robot Help</a></li>
+                            <li><a href="http://www.w3schools.com/">Website Help</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
-                        <ul class="subnav">
-                            <li><a href="pages/contact/student.php">Student Info / Signup</a></li>
-                            <li><a href="pages/contact/mentor.php">Mentor Info / Signup</a></li>
-                            <li><a href="pages/contact/sponsor.php">Sponsor Info / Signup</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="pages/contact.php">Contact</a></li>
                 </ul>
            </div>
         </div>
