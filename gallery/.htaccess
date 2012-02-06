@@ -1,0 +1,15 @@
+
+
+# BEGIN Plogger
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /austin/gallery
+RewriteCond %{REQUEST_URI} !(\.|/$)
+RewriteRule ^.*$ http://themrmiller.com%{REQUEST_URI}/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^.*$ - [S=2]
+RewriteRule feed/$ plog-rss.php?path=%{REQUEST_URI} [L]
+RewriteRule ^.*$ index.php?path=%{REQUEST_URI} [L]
+</IfModule>
+# END Plogger
