@@ -20,7 +20,7 @@ include("inc/sessionNew.php");
 <?php 
 	include("inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1 ORDER BY `Area`");
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1");
 ?>
         <div class="container_12">
         	<div class="grid_4">
@@ -39,9 +39,7 @@ include("inc/sessionNew.php");
                <div class="contentHead"></div>
                <div class="contentCont" style="padding:0;">
                    <div class="aviaslider" id="custom-fade-slider">
-                   	<?php 
-						echo mysql_result($rs, 1);
-					?>
+                       <?php include('gallery/plog-content/plugins/slider-generation/slider.php'); ?>
                     </div>
                 </div>
             </div>
