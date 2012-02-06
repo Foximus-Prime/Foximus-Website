@@ -152,9 +152,9 @@ if(!$session->isAdmin()){
                         	<input style="display:none;" type="text" value="1" />
                             <input type="image" src="img/icons/change_user_permisions.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
                         </form>
-                        <form style="display:inline;" onClick="window.open('admin/adminprocess2.php?edit_roster=1','', 'width=800, height=800, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
+                        <form style="display:inline;" onClick="window.open('admin/userPics/doUserPics.php','', 'width=800, height=800, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">
                         	<input style="display:none;" type="text" value="1" />
-                            <input type="image" src="img/icons/change_user_permisions.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
+                            <input type="image" src="img/icons/list_users.png" style="width:101px; height:103px;" alt="List Users" value="List Users" />
                         </form>
                 </article>
             </div>
