@@ -28,11 +28,9 @@ include("inc/sessionNew.php");
                 	<h3>About Us</h3>
                 </div>
                 <article class="contentCont"  id="topInfo">
-                    <p>
 					<?php 
 						echo mysql_result($rs, 0);
 					?>
-                    </p>
                 </article>
             </div>
             <div class="grid_8">
