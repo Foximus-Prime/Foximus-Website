@@ -169,7 +169,7 @@ class Session
 	  $r = mysql_query($q, $database->connection);
 	  $dbarray['Pass'] = mysql_result($r, 0);
 	  
-         $form->setError($field, "* Invalid password".md5($subpass)." v ".md5($dbarray['Pass']));
+         $form->setError($field, "* Invalid password");
       }
       
       /* Return if form errors exist */
