@@ -108,7 +108,6 @@ class AdminProcess2
    /**
     */
    function procLsUsers(){
-   
 	   global $database;
 	   $q = "SELECT Name,Permisions,Email,Timestamp "
 		   ."FROM ".TBL_USERS." ORDER BY Permisions DESC,Name";
