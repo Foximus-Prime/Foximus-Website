@@ -66,7 +66,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 1; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -78,7 +78,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 2; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -90,7 +90,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 3; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -102,7 +102,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 4; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -114,7 +114,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 5; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -126,7 +126,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 6; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -138,7 +138,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 7; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -150,7 +150,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 8; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -162,7 +162,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 9; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -174,7 +174,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 10; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -186,7 +186,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 11; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
@@ -197,7 +197,7 @@ include("../../inc/sessionNew.php");
                 <article class="contentCont" style="width:916px;">
 		<?php $TEMP_TEAM_ID = 12; for($i = 0; $i < count($cache); $i++) { if($count[$i][$TEMP_TEAM_ID] > 0) { ?>
                 <div class="clubMember <?php if($count[$i][$TEMP_TEAM_ID] == 2) { echo "subTeamLeader"; } else if($count[$i][$TEMP_TEAM_ID] > 2) { echo "subTeamMentor"; } ?>">
-                    <img src="phpThumb/phpThumb.php?src=../img/profilePics/<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>.jpg&amp;w=130&amp;h=130" alt="<?php echo $msresult[$i][0]." ".$msresult[$i][1]; ?>"  width="130" height="130"/>
+                    <img src="img/profilePics/<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>.jpg" alt="<?php echo strtolower($msresult[$i][0].$msresult[$i][1]); ?>"  width="130" height="130"/>
                     <h4><?php echo $msresult[$i][0]."<br />".$msresult[$i][1]; ?></h4>
                 </div>
         <?php } } flush();?>
