@@ -654,26 +654,24 @@ footer {
 
 #footL {
 	padding: 0px;
-	margin: 0px;
 	float: left;
 	background-image: url(http://themrmiller.com/austin/img/lFoot.png);
 	position: relative;
 	height: 151px;
 	width: 25px;
 	left: -25px;
-	bottom: 64px;
+	margin-top: -64px;
 }
 
 #footR {
 	padding: 0px;
-	margin: 0px;
 	float: right;
 	background-image: url(http://themrmiller.com/austin/img/rFoot.png);
 	position: relative;
 	height: 151px;
 	width: 25px;
 	right: -25px;
-	bottom: 64px;
+	margin-top: -64px;
 }
 
 #footCont {
