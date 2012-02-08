@@ -10,13 +10,13 @@
 define('PLOGGER_DB_HOST', 'localhost');
 
 /* MySQL database username */
-define('PLOGGER_DB_USER', 'derekmil_austinh');
+define('PLOGGER_DB_USER', '');
 
 /* MySQL database password */
-define('PLOGGER_DB_PW', '0126280');
+define('PLOGGER_DB_PW', '');
 
 /* The name of the database for Plogger */
-define('PLOGGER_DB_NAME', 'derekmil_austinh');
+define('PLOGGER_DB_NAME', '');
 
 /* Define the Plogger database table prefix. You can have multiple installations in one database if you give
  * each a unique prefix. Only numbers, letters, and underscores are permitted (i.e., plogger_). */
