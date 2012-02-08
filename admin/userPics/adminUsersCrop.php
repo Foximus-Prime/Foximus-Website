@@ -77,20 +77,21 @@ if(!$session->isAdmin()){
 			<input type="submit" value="Crop Image" />
 		</form>';
 		if(!isset($_POST['rotate'])){
-			echo'<form action="adminUsersCrop.php" method="post">
-			<input type="hidden" id="rotate" name="rotate" value="-90" />
-			<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
-			<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
-			<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
-			<input type="submit" value="Rotate Image (Facing Right)" />
-		</form>
-		<form action="adminUsersCrop.php" method="post">
-			<input type="hidden" id="rotate" name="rotate" value="90" />
-			<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
-			<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
-			<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
-			<input type="submit" value="Rotate Image (Facing Left)" />
-		</form>';
+			echo'
+			<form action="adminUsersCrop.php" method="post">
+				<input type="hidden" id="rotate" name="rotate" value="-90" />
+				<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
+				<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
+				<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
+				<input type="submit" value="Rotate Image (Facing Right)" />
+			</form>
+			<form action="adminUsersCrop.php" method="post">
+				<input type="hidden" id="rotate" name="rotate" value="90" />
+				<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
+				<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
+				<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
+				<input type="submit" value="Rotate Image (Facing Left)" />
+			</form>';
 		}
 	}
 }
