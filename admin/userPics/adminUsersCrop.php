@@ -20,7 +20,7 @@ if(!$session->isAdmin()){
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 		
 		if(isset($_POST['rotate']))
-			$dst_r = imagerotate($dst_r, -90, 0);
+			$dst_r = imagerotate($dst_r, $_POST['rotate'], 0);
 			
 		imagejpeg($dst_r, '../../img/profilePics/'.strtolower($_POST['fname'].$_POST['lname']).'.jpg', $jpeg_quality);
 		echo 'Completed image for '.$_POST['fname'].' '.$_POST['lname'].'.<br />';
@@ -79,11 +79,18 @@ if(!$session->isAdmin()){
 		if(!isset($_POST['rotate'])){
 			echo'
 		<form action="adminUsersCrop.php" method="post">
+			<input type="hidden" id="rotate" name="rotate" value="-90" />
+			<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
+			<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
+			<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
+			<input type="submit" value="Rotate Image (Facing Right)" />
+		</form>
+		<form action="adminUsersCrop.php" method="post">
 			<input type="hidden" id="rotate" name="rotate" value="90" />
 			<input type="hidden" id="image" name="image" value = "'.$subSRC.'" />
 			<input type="hidden" id="fname" name="fname" value = "'.$_POST['fname'].'" />
 			<input type="hidden" id="lname" name="lname" value = "'.$_POST['lname'].'" />
-			<input type="submit" value="Rotate Image" />
+			<input type="submit" value="Rotate Image (Facing Left)" />
 		</form>';
 		}
 	}
