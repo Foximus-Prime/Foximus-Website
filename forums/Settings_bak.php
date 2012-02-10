@@ -20,7 +20,7 @@ $mmessage = 'Okay faithful users...we\'re attempting to restore an older backup 
 ########## Forum Info ##########
 $mbname = 'Foximus-Prime Forums';		# The name of your forum.
 $language = 'english';		# The default language file set for the forum.
-$boardurl = 'http://themrmiller.com/austin/forums';		# URL to your forum's folder. (without the trailing /!)
+$boardurl = 'http://robotics.cyberdenton.com/forums';		# URL to your forum's folder. (without the trailing /!)
 $webmaster_email = 'austinh100@yahoo.com';		# Email address to send emails from. (like noreply@yourdomain.com.)
 $cookiename = 'FoximusSMF';		# Name of the cookie to set for authentication.
 
@@ -38,9 +38,9 @@ $db_error_send = 0;
 
 ########## Directories/Files ##########
 # Note: These directories do not have to be changed unless you move things.
-$boarddir = '/home2/derekmil/public_html/themrmiller.com/austin/forums';		# The absolute path to the forum's folder. (not just '.'!)
-$sourcedir = '/home2/derekmil/public_html/themrmiller.com/austin/forums/Sources';		# Path to the Sources directory.
-$cachedir = '/home2/derekmil/public_html/themrmiller.com/austin/forums/cache';		# Path to the cache directory.
+$boarddir = '/home2/derekmil/public_html/robotics.cyberdenton.com/forums';		# The absolute path to the forum's folder. (not just '.'!)
+$sourcedir = '/home2/derekmil/public_html/robotics.cyberdenton.com/forums/Sources';		# Path to the Sources directory.
+$cachedir = '/home2/derekmil/public_html/robotics.cyberdenton.com/forums/cache';		# Path to the cache directory.
 
 ########## Error-Catching ##########
 # Note: You shouldn't touch these settings.

@@ -112,7 +112,7 @@ function template_html_above()
 	// Here comes the JavaScript bits!
 	echo '
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-	<script type="text/javascript" src="http://themrmiller.com/austin/js/script.js?fin20"></script>
+	<script type="text/javascript" src="http://robotics.cyberdenton.com/js/script.js?fin20"></script>
 	<script type="text/javascript" src="', $settings['default_theme_url'], '/scripts/script.js?fin20"></script>
 	<script type="text/javascript" src="', $settings['theme_url'], '/scripts/theme.js?fin20"></script>
 	<script type="text/javascript"><!-- // --><![CDATA[
@@ -184,7 +184,7 @@ function template_html_above()
 				<div id="menuR"></div>
 				<div id="menuCont">
 					 <ul id="mainMenuL" class="topnav">
-						  <li><a href="http://themrmiller.com/austin">Home</a></li>
+						  <li><a href="http://robotics.cyberdenton.com">Home</a></li>
 						  <li>
 								<a href="#">About Us</a>
 								<ul class="subnav">

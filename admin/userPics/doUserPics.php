@@ -46,7 +46,7 @@ if(!$session->isAdmin()){
 					<legend>Picture of '.$picsTodo[0][0].' '.$picsTodo[0][1].'</legend>
 					<form id="image" action="adminUsersCrop.php" method="post">
 						<dl>
-							<dt><label for="image">Find a pic he/she is in via the <a href="http://themrmiller.com/austin/gallery">gallery</a> and paste the full url here:</label></dt>
+							<dt><label for="image">Find a pic he/she is in via the <a href="http://robotics.cyberdenton.com/gallery">gallery</a> and paste the full url here:</label></dt>
 							<dd><input id="image" type="text" name="image" /></dd>
 						</dl>
 						<input type="hidden" name="fname" value="'.$picsTodo[0][0].'">
@@ -61,7 +61,7 @@ if(!$session->isAdmin()){
 					<legend>Picture of '.$fname.' '.$lname.'</legend>
 					<form id="image" action="adminUsersCrop.php" method="post">
 						<dl>
-							<dt><label for="image">Find a pic he/she is in via the <a href="http://themrmiller.com/austin/gallery">gallery</a> and paste the full url here:</label></dt>
+							<dt><label for="image">Find a pic he/she is in via the <a href="http://robotics.cyberdenton.com/gallery">gallery</a> and paste the full url here:</label></dt>
 							<dd><input id="image" type="text" name="image" /></dd>
 						</dl>
 						<input type="hidden" name="fname" value="'.$fname.'">

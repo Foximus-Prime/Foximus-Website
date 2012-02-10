@@ -14,7 +14,7 @@ $license: Type of license theme is released under
 $theme_name = 'Foximus';
 $version = '1.0';
 $author = 'Austin Hampton';
-$url = 'http://www.themrmiller.com/austin';
+$url = 'http://www.robotics.cyberdenton.com';
 $description = 'Custom Foximus-Prime theme.';
 $license = 'GNU General Public License (GPL)';
 ?>

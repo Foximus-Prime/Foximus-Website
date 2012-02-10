@@ -102,7 +102,7 @@ if(!$session->isAdmin()){
                         </li>
                         <li class="closed"><span class="folder">Media</span>
                             <ul>
-                                <li><span class="file"><a href="#" onClick="window.open('http://themrmiller.com/austin/gallery/plog-admin/','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Photo Gallery</a></span></li>
+                                <li><span class="file"><a href="#" onClick="window.open('http://robotics.cyberdenton.com/gallery/plog-admin/','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Photo Gallery</a></span></li>
                                 <li><span class="file">Edit video archive by adding or deleting videos in the "Web" playlist.</span></li>
                                 <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=26','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Resources</a></span></li>
                                 <li><span class="file"><a href="#" onClick="window.open('admin/adminprocess2.php?edit_content=1&contentID=27','', 'width=700, height=402, location=no, menubar=no, status=no,toolbar=no, scrollbars=no, resizable=yes'); return false">Resources Sidebar</a></span></li>

@@ -5,7 +5,7 @@
 RewriteEngine on
 RewriteBase /austin/gallery
 RewriteCond %{REQUEST_URI} !(\.|/$)
-RewriteRule ^.*$ http://themrmiller.com%{REQUEST_URI}/ [R=301,L]
+RewriteRule ^.*$ http://robotics.cyberdenton.com%{REQUEST_URI}/ [R=301,L]
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^.*$ - [S=2]

@@ -18,7 +18,7 @@
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="http://themrmiller.com/austin/js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
+  <script>window.jQuery || document.write('<script src="http://robotics.cyberdenton.com/js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
 
      </div>
      </div>
@@ -35,7 +35,7 @@
                         <img src="http://978.gs/resources/img/978-badge.png" alt="This site is built with 978 grid system" width="88" height="31"  style="border: 0;">
                     </a>
                     <a href="https://github.com/Foximus-Prime">
-                        <img src="http://themrmiller.com/austin/img/github_logo.png" alt="We're on Github!" width="88" height="31">
+                        <img src="http://robotics.cyberdenton.com/img/github_logo.png" alt="We're on Github!" width="88" height="31">
                     </a>
                 </article>
             </div>
@@ -59,8 +59,8 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- scripts concatenated and minified via ant build script-->
-  <script src="http://themrmiller.com/austin/js/plugins.js"></script>
-  <script src="http://themrmiller.com/austin/js/script.js"></script>
+  <script src="http://robotics.cyberdenton.com/js/plugins.js"></script>
+  <script src="http://robotics.cyberdenton.com/js/script.js"></script>
 	<script type="text/javascript" src="http://978.gs/resources/js/jquery.gs-overlay.min.js"></script>
     <script type="text/javascript">
     jQuery(function() {

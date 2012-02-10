@@ -24,7 +24,7 @@ if(!$session->isAdmin()){
 			
 		imagejpeg($dst_r, '../../img/profilePics/'.strtolower($_POST['fname'].$_POST['lname']).'.jpg', $jpeg_quality);
 		echo 'Completed image for '.$_POST['fname'].' '.$_POST['lname'].'.<br />';
-		echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://themrmiller.com/austin/admin/userPics/doUserPics.php\">";
+		echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://robotics.cyberdenton.com/admin/userPics/doUserPics.php\">";
 		echo "Redirect in 2...";
 		
 	} else {
@@ -33,7 +33,7 @@ if(!$session->isAdmin()){
 		if(strstr($subSRC,'plog-content/images/'))
 			$src = $subSRC;
 		else {
-			$src = 'http://themrmiller.com/austin/gallery/plog-content/images/'.rstrstr($subSRC,'build/');
+			$src = 'http://robotics.cyberdenton.com/gallery/plog-content/images/'.rstrstr($subSRC,'build/');
 			$src = substr($src,0,strlen($src)-1).'.jpg';
 		}
 		

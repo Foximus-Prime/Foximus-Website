@@ -68,9 +68,9 @@ class modifyContent
                     if($change)
                             $database->query("UPDATE `user` SET `Team` = '$rs2' WHERE Name = '$array1[$i]'");
               }
-              echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1\">";
+              echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1\">";
               echo "Redirect in 2...";
-              //header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
+              //header("Location: http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1");
 	  }
 	  
 	  function removeTeam($array1,$array2) {
@@ -85,9 +85,9 @@ class modifyContent
 				}
 				$database->query("UPDATE `user` SET `Team` = '$rs2' WHERE Name = '$array1[$i]'");
 		  }
-		  echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1\">";
+		  echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1\">";
 		  echo "Redirect in 2...";
-		  //header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
+		  //header("Location: http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1");
 	  }
 	  
 	  function removeHigherStatus($array1,$array2) {
@@ -103,9 +103,9 @@ class modifyContent
 				}
 				$database->query("UPDATE `user` SET `Team` = '$rs2' WHERE Name = '$array1[$i]'");
 		  }
-		  echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1\">";
+		  echo "<meta HTTP-EQUIV=\"refresh\" CONTENT=\"2; URL=http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1\">";
 		  echo "Redirect in 2...";
-		  //header("Location: http://themrmiller.com/austin/admin/adminprocess2.php?edit_roster=1");
+		  //header("Location: http://robotics.cyberdenton.com/admin/adminprocess2.php?edit_roster=1");
 	  }
 	  
 	  function sendData($id) {

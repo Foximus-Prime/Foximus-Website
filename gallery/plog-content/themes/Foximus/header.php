@@ -6,23 +6,23 @@
             <div id="menuR"></div>
             <div id="menuCont">
                 <ul id="mainMenuL" class="topnav">
-                    <li><a href="http://themrmiller.com/austin">Home</a></li>
+                    <li><a href="http://robotics.cyberdenton.com">Home</a></li>
                     <li>
                         <a href="#">About Us</a>
                         <ul class="subnav">
-                            <li><a href="http://themrmiller.com/austin/pages/about/current.php">Current Team</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/about/sponsors.php">Sponsors</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/about/website.php">Website</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/about/history.php">History</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/about/current.php">Current Team</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/about/sponsors.php">Sponsors</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/about/website.php">Website</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/about/history.php">History</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://themrmiller.com/austin/pages/first.php">US FIRST Info</a></li>
+                    <li><a href="http://robotics.cyberdenton.com/pages/first.php">US FIRST Info</a></li>
                     <li>
                         <a href="#">FRC</a>
                         <ul class="subnav">
-                            <li><a href="http://themrmiller.com/austin/pages/frc/game.php">2012 Game</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/frc/robot.php">Our Robot</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/frc/archive.php">Robot Archive</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/frc/game.php">2012 Game</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/frc/robot.php">Our Robot</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/frc/archive.php">Robot Archive</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -31,9 +31,9 @@
                     <li>
                         <a href="#">Media</a>
                         <ul class="subnav">
-                            <li><a href="http://themrmiller.com/austin/gallery/">Photo Gallery</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/gallery/">Photo Gallery</a></li>
                             <li><a href="http://www.youtube.com/user/FoximusPrime3695?feature=mhee">Video Archive</a></li>
-                            <li><a href="http://themrmiller.com/austin/pages/media/resources.php">Resources</a></li>
+                            <li><a href="http://robotics.cyberdenton.com/pages/media/resources.php">Resources</a></li>
                         </ul>
                     </li>
                     <li>
@@ -43,7 +43,7 @@
                             <li><a href="http://www.w3schools.com/">Website Help</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://themrmiller.com/austin/pages/contact.php">Contact</a></li>
+                    <li><a href="http://robotics.cyberdenton.com/pages/contact.php">Contact</a></li>
                 </ul>
            </div>
         </div>

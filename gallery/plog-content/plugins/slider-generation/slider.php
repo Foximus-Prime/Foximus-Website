@@ -4,7 +4,7 @@ Plugin Name: Random Images
 Description: This script generates code for 5 random images in the avivaslider.
 Version: 1.0
 Author: Austin Hampton
-Author URI: http://themrmiller.com/austin/
+Author URI: http://robotics.cyberdenton.com/
 License: GNU General Public License
 
  * This program is free software; you can redistribute it and/or modify

@@ -13,7 +13,7 @@ $instructions: Instructions for use beyond the inclusion code
 $plugin_name = 'Slider Generator';
 $version = '1.0';
 $author = 'Austin Hampton';
-$url = 'http://themrmiller.com/austin/';
+$url = 'http://robotics.cyberdenton.com/';
 $description = 'Prints out the code for 5 random images in avivaslider.';
 $license = 'GNU General Public License (GPL)';
 $instructions = '1. Place the PHP include code on the page where you would like the Random Images thumbnails to be shown.<br />
