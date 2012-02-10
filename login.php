@@ -19,17 +19,12 @@ include("inc/sessionNew.php");
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Foximus-Prime</title>
+  	<link rel="stylesheet" type="text/css" media="all" href="js/mylibs/niceforms/niceforms-default.css" />
 <?php
-	include("inc/header.php");
-?>
-        
-		<section id="mainCont">
-
-
-<div class="container_12" style="padding-top: 20px;">
-<?php
+include("inc/header.php");
 if($session->isAdmin()){
 ?>
+<div class="container_12" style="padding-top: 20px;">
     <div class="grid_12">
         <div class="contentHead">
             <h3>Admin Link</h3>
@@ -38,31 +33,44 @@ if($session->isAdmin()){
             <h1><a href="admin/admin.php">CLICKY</a></h1>
       </article>
     </div>
+</div>
 <div id="clear"></div>
 <?php
 }
 else{
 ?>
+<div class="container_12" style="padding-top: 20px;">
     <div class="grid_12">
         <div class="contentHead">
             <h3>Login</h3>
         </div>
         <article class="contentCont"  id="topInfo">
+<?php
+if($form->num_errors > 0){
+   echo "<p class=\"errors\">".$form->num_errors." error(s) found</p>";
+}
+?>
+        <form id="login" action="loginCheck.php" method="post" class="niceform">
             <fieldset>
                 <legend>Log In</legend>
-                <form id="login" action="loginCheck.php" method="post">
                     <dl>
                         <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
                         <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
+                    </dl>
+                    <dl>
                         <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
                         <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
-                        <dt><p>Remember me next time</p></dt>
-                        <dd><input type="checkbox" name="remember" <? if($form->value("remember") != ""){ echo "checked"; } ?>/></dd>
                     </dl>
-                    <input type="hidden" name="sublogin" value="1">
-                    <input type="submit" value="Login" />
-                </form>
-            </fieldset>
+                    <dl>
+                        <dt><label for="remember">Remember Me:</label></dt>
+                        <dd><input type="checkbox" name="remember" value="<? if($form->value("remember") != ""){ echo "checked"; } ?>" /></dd>
+                    </dl>
+              </fieldset>
+               <fieldset class="action">
+                   <input type="hidden" name="sublogin" value="1">
+                   <input type="submit" value="Login" />
+               </fieldset>
+            </form>
       </article>
     </div>
 </div>
@@ -70,6 +78,9 @@ else{
 <?php
 }
 include("inc/js.php");
+?>
+<script language="javascript" type="text/javascript" src="js/mylibs/niceforms/niceforms.js"></script>
+<?php
 include("inc/footer.php");
 ?>
 

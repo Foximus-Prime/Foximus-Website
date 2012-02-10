@@ -1,0 +1,12 @@
+[26-Jan-2012 10:23:20] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 44
+[26-Jan-2012 10:23:20] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 44
+[26-Jan-2012 10:23:24] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 44
+[26-Jan-2012 10:23:24] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 44
+[26-Jan-2012 10:37:06] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 47
+[26-Jan-2012 10:37:06] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 47
+[26-Jan-2012 10:37:06] PHP Warning:  Cannot use a scalar value as an array in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 47
+[26-Jan-2012 10:39:26] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 32
+[26-Jan-2012 10:39:28] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 33
+[26-Jan-2012 10:42:13] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 33
+[26-Jan-2012 10:53:07] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 29
+[26-Jan-2012 10:53:12] PHP Warning:  mysql_num_rows(): supplied argument is not a valid MySQL result resource in /home3/derekmil/public_html/themrmiller.com/austin/pages/about/current.php on line 29

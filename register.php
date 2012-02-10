@@ -90,15 +90,15 @@ if($form->num_errors > 0){
                         <dt><label for="username" maxlength="30" value="<? echo $form->value("user"); ?>">Username:</label></dt>
                         <dd><input id="username" type="text" name="user" /><? echo $form->error("user"); ?></dd>
                     </dl>
-              <dl>
+              		<dl>
                         <dt><label for="password" maxlength="30" value="<? echo $form->value("pass"); ?>">Password:</label></dt>
                         <dd><input id="password" type="password" name="pass" /><? echo $form->error("pass"); ?></dd>
                     </dl>
                     <p>&nbsp;</p>
                     <dl>
                       <dt><label for="email" maxlength="200" value="<? echo $form->value("email"); ?>">Email:</label></dt>
-                        <dd><input id="email" type="text" name="email" /><? echo $form->error("email"); ?></dd>
-              </dl>
+                      <dd><input id="email" type="text" name="email" /><? echo $form->error("email"); ?></dd>
+              		</dl>
             </fieldset>
             <fieldset class="action">
                 <input type="hidden" name="subjoin" value="1">
