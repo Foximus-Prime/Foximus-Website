@@ -1,3 +1,4 @@
+\
 <?php
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
@@ -106,7 +107,7 @@ $i = 1;
  * MySQL hostname or IP address
  *
  * @global string $cfg['Servers'][$i]['host']
- */
+ */ 
 $cfg['Servers'][$i]['host'] = 'localhost';
 
 /**

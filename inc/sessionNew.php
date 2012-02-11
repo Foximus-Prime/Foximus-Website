@@ -2,8 +2,6 @@
 include_once("database.php");
 include_once("form.php");
 
-
-
 class Session
 {
    var $username;     //Username given on sign-up
@@ -15,8 +13,8 @@ class Session
    var $url;          //The page url current being viewed
    var $referrer;     //Last recorded site page viewed
    
-   	var $ip;
-	var $salt;
+   var $ip;
+   var $salt;
    /**
     * Note: referrer should really only be considered the actual
     * page referrer in process.php, any other time it may be
