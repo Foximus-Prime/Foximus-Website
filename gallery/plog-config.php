@@ -5,18 +5,20 @@
 
  * If you want to change the database connection information, you may also edit this file manually
  * after Plogger has been installed. */
+ 
+include_once("../inc/constants.php");
 
 /* MySQL hostname */
-define('PLOGGER_DB_HOST', 'localhost');
+define('PLOGGER_DB_HOST', DB_SERVER);
 
 /* MySQL database username */
-define('PLOGGER_DB_USER', '');
+define('PLOGGER_DB_USER', DB_USER);
 
 /* MySQL database password */
-define('PLOGGER_DB_PW', '');
+define('PLOGGER_DB_PW', DB_PASS);
 
 /* The name of the database for Plogger */
-define('PLOGGER_DB_NAME', '');
+define('PLOGGER_DB_NAME', DB_NAME);
 
 /* Define the Plogger database table prefix. You can have multiple installations in one database if you give
  * each a unique prefix. Only numbers, letters, and underscores are permitted (i.e., plogger_). */

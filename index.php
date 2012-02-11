@@ -1,5 +1,5 @@
 <?php 
-include("inc/sessionNew.php");
+include_once("inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -18,7 +18,7 @@ include("inc/sessionNew.php");
   
     <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
 <?php 
-	include("inc/header.php");
+	include_once("inc/header.php");
 
 	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1");
 ?>
@@ -37,7 +37,7 @@ include("inc/sessionNew.php");
                <div class="contentHead"></div>
                <div class="contentCont" style="padding:0;">
                    <div class="aviaslider" id="custom-fade-slider">
-                       <?php include('gallery/plog-content/plugins/slider-generation/slider.php'); ?>
+                       <?php include_once('gallery/plog-content/plugins/slider-generation/slider.php'); ?>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@ include("inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 
-<?php  include("inc/js.php"); ?>
+<?php  include_once("inc/js.php"); ?>
 		<!-- Twitter -->
 	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
 	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
@@ -102,4 +102,4 @@ include("inc/sessionNew.php");
     	<!-- Countdown -->
     <script type='text/javascript' src='js/mylibs/countdown/jquery.countdown.js'></script>
     <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>
-<?php  include("inc/footer.php"); ?>
+<?php  include_once("inc/footer.php"); ?>

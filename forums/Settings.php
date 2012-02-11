@@ -10,6 +10,8 @@
  *
  * @version 2.0
  */
+ 
+include_once("../inc/constants.php");
 
 ########## Maintenance ##########
 # Note: If $maintenance is set to 2, the forum will be unusable!  Change it to 0 to fix it.
@@ -26,10 +28,10 @@ $cookiename = 'FoximusSMF';		# Name of the cookie to set for authentication.
 
 ########## Database Info ##########
 $db_type = 'mysql';
-$db_server = 'localhost';
-$db_name = 'derekmil_austinh';
-$db_user = 'derekmil_austinh';
-$db_passwd = '0126280';
+$db_server = DB_SERVER;
+$db_name = DB_NAME;
+$db_user = DB_USER;
+$db_passwd = DB_PASS;
 $ssi_db_user = '';
 $ssi_db_passwd = '';
 $db_prefix = 'smf_';
