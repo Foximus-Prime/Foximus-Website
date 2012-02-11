@@ -1,5 +1,5 @@
 <?php 
-include("../../inc/sessionNew.php");
+include_once("../../inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -20,7 +20,7 @@ include("../../inc/sessionNew.php");
   <link rel="stylesheet" href="js/mylibs/flipwall/styles.css" type="text/css" media="screen" />
   
 <?php 
-	include("../../inc/header.php");
+	include_once("../../inc/header.php");
 
 	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 3 ORDER BY `Area`");
 ?>
@@ -44,8 +44,8 @@ include("../../inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 
-<?php  include("../../inc/js.php"); ?>
+<?php  include_once("../../inc/js.php"); ?>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 <script type="text/javascript" src="js/mylibs/flipwall/script.js"></script>
 <script type="text/javascript" src="js/mylibs/flipwall/flip/jquery.flip.min.js"></script>
-<?php  include("../../inc/footer.php"); ?>
+<?php  include_once("../../inc/footer.php"); ?>

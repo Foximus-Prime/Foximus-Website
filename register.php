@@ -1,5 +1,5 @@
 <?php
-include("inc/sessionNew.php");
+include_once("inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -21,7 +21,7 @@ include("inc/sessionNew.php");
   <title>Foximus-Prime</title>
   	<link rel="stylesheet" type="text/css" media="all" href="js/mylibs/niceforms/niceforms-default.css" />
 <?php
-	include("inc/header.php");
+	include_once("inc/header.php");
 ?>
 
 <div class="container_12" style="padding-top: 20px;">
@@ -111,11 +111,11 @@ if($form->num_errors > 0){
 </div>
 <div class="clear"></div>
 <?php
-include("inc/js.php");
+include_once("inc/js.php");
 ?>
 <script language="javascript" type="text/javascript" src="js/mylibs/niceforms/niceforms.js"></script>
 <?php
-include("inc/footer.php");
+include_once("inc/footer.php");
 ?>
 
 </div>

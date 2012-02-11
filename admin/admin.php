@@ -1,6 +1,6 @@
 <?php 
 
-include("../inc/sessionNew.php");
+include_once("../inc/sessionNew.php");
 
 /**
  * User not an administrator, redirect to main page
@@ -28,7 +28,7 @@ if(!$session->isAdmin()){
 <base href="../" />
 
 <?php 
-	include("../inc/header.php");
+	include_once("../inc/header.php");
 ?>
 
 		<div class="container_12" style="padding-top: 20px;">
@@ -137,7 +137,7 @@ if(!$session->isAdmin()){
 
                             
 
-                            include("../inc/view_active.php");
+                            include_once("../inc/view_active.php");
 
                             ?>
                     </p>
@@ -161,9 +161,9 @@ if(!$session->isAdmin()){
         </div>
         <div class="clear"></div>
 <?php } ?>
-<?php  include("../inc/js.php"); ?>
+<?php  include_once("../inc/js.php"); ?>
 			    <link type="text/css" rel="stylesheet" href="js/mylibs/treeview/jquery.treeview.css">
                 <link type="text/css" rel="stylesheet" href="admin/admin.css">
 				<script type="text/javascript" src="js/mylibs/treeview/jquery.treeview.js"></script>
                 <script type="text/javascript">$("#browser").treeview();</script>
-<?php  include("../inc/footer.php"); ?>
+<?php  include_once("../inc/footer.php"); ?>

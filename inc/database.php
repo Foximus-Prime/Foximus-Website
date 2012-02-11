@@ -8,7 +8,7 @@
  * Written by: Jpmaster77 a.k.a. The Grandmaster of C++ (GMC)
  * Last Updated: August 17, 2004
  */
-include("constants.php");
+include_once("constants.php");
       
 class MySQLDB
 {

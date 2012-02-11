@@ -1,5 +1,5 @@
 <?php
-include("../../inc/sessionNew.php");
+include_once("../../inc/sessionNew.php");
 
 /**
  * User not an administrator, redirect to main page

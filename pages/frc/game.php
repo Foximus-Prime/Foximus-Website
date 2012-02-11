@@ -1,5 +1,5 @@
 <?php 
-include("../../inc/sessionNew.php");
+include_once("../../inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -17,7 +17,7 @@ include("../../inc/sessionNew.php");
   <title>Foximus-Prime</title>
   <base href="../../" />
 <?php 
-	include("../../inc/header.php");
+	include_once("../../inc/header.php");
 
 	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 2 ORDER BY `Area`");
 ?>
@@ -41,5 +41,5 @@ include("../../inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 
-<?php  include("../../inc/js.php"); ?>
-<?php  include("../../inc/footer.php"); ?>
+<?php  include_once("../../inc/js.php"); ?>
+<?php  include_once("../../inc/footer.php"); ?>

@@ -48,7 +48,7 @@ if(isset($_POST['submit'])) {
 }
 
 
-include("../inc/sessionNew.php");
+include_once("../inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -66,7 +66,7 @@ include("../inc/sessionNew.php");
   <title>Foximus-Prime</title>
   <base href="../" />
   <?php
-  include("../inc/header.php");
+  include_once("../inc/header.php");
   ?>
   <style type="text/css">
 	#contact-wrapper {
@@ -154,7 +154,7 @@ include("../inc/sessionNew.php");
             </div>
             <div class="clear"></div>
 
-<?php  include("../inc/js.php"); ?>
+<?php  include_once("../inc/js.php"); ?>
 	<script src="js/mylibs/validation/jquery.validate.js" type="text/javascript"></script>
     
     <script type="text/javascript">
@@ -163,4 +163,4 @@ include("../inc/sessionNew.php");
         //$("#click").click();
     });
     </script>
-<?php  include("../inc/footer.php"); ?>
+<?php  include_once("../inc/footer.php"); ?>

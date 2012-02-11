@@ -1,12 +1,12 @@
 <?php
-include("inc/sessionNew.php");
+include_once("inc/sessionNew.php");
 ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Fluid Logins - Edit User</title>
 <?php
-include("inc/sessionNew.php");
+include_once("inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -27,7 +27,7 @@ include("inc/sessionNew.php");
 
   <title>Foximus-Prime</title>
 <?php
-	include("inc/header.php");
+	include_once("inc/header.php");
 ?>
         
 		<section id="mainCont">
@@ -87,8 +87,8 @@ if($form->num_errors > 0){
 
         
 		<footer id="footer">
-<?php  include("inc/js.php"); ?>
-<?php  include("inc/footer.php"); ?>
+<?php  include_once("inc/js.php"); ?>
+<?php  include_once("inc/footer.php"); ?>
 		</footer>
 
 </div>

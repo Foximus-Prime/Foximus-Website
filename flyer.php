@@ -1,5 +1,5 @@
 <?php 
-include("inc/sessionNew.php");
+include_once("inc/sessionNew.php");
 ?>
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -110,5 +110,5 @@ include("inc/sessionNew.php");
                     </div>
                 </div>
             </div>
-<?php  include("inc/js.php"); ?>
-<?php  include("inc/footer.php"); ?>
+<?php  include_once("inc/js.php"); ?>
+<?php  include_once("inc/footer.php"); ?>

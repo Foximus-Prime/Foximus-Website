@@ -213,4 +213,4 @@ if(isset($_POST['submit'])) {
                     </p>
                 </article>
             </div>
-<?php include("inc/footer.php"); ?>
+<?php include_once("inc/footer.php"); ?>
