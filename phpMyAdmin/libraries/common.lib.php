@@ -614,12 +614,12 @@ function PMA_mysqlDie($error_message = '', $the_query = '',
             if (strlen($table)) {
                 $_url_params['db'] = $db;
                 $_url_params['table'] = $table;
-                $doedit_goto = '<a href="tbl_sql.php?' . PMA_generate_common_url($_url_params) . '">';
+                $doedit_goto = '<a href="tbl_sql.php' . PMA_generate_common_url($_url_params) . '">';
             } elseif (strlen($db)) {
                 $_url_params['db'] = $db;
-                $doedit_goto = '<a href="db_sql.php?' . PMA_generate_common_url($_url_params) . '">';
+                $doedit_goto = '<a href="db_sql.php' . PMA_generate_common_url($_url_params) . '">';
             } else {
-                $doedit_goto = '<a href="server_sql.php?' . PMA_generate_common_url($_url_params) . '">';
+                $doedit_goto = '<a href="server_sql.php' . PMA_generate_common_url($_url_params) . '">';
             }
 
             $error_msg_output .= $doedit_goto
@@ -811,8 +811,8 @@ function PMA_getTableList($db, $tables = null, $limit_offset = 0, $limit_count =
         if ($GLOBALS['cfg']['ShowTooltipAliasTB']
           && $GLOBALS['cfg']['ShowTooltipAliasTB'] !== 'nested') {
             // switch tooltip and name
-            $table['Comment'] = $table['Name'];
             $table['disp_name'] = $table['Comment'];
+            $table['Comment'] = $table['Name'];
         } else {
             $table['disp_name'] = $table['Name'];
         }
@@ -1059,13 +1059,10 @@ function PMA_showMessage($message, $sql_query = null, $type = 'notice', $is_view
         } else {
             // Parse SQL if needed
             $parsed_sql = PMA_SQP_parse($query_base);
-            if (PMA_SQP_isError()) {
-                unset($parsed_sql);
-            }
         }
 
         // Analyze it
-        if (isset($parsed_sql)) {
+        if (isset($parsed_sql) && ! PMA_SQP_isError()) {
             $analyzed_display_query = PMA_SQP_analyze($parsed_sql);
             // Here we append the LIMIT added for navigation, to
             // enable its display. Adding it higher in the code

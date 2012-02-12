@@ -31,7 +31,7 @@ if (!isset($export_list[$type])) {
 $compression_methods = array(
     'zip',
     'gzip',
-    'bzip',
+    'bzip2',
 );
 
 /**
@@ -150,7 +150,7 @@ function PMA_exportOutputHandler($line)
                     $dump_buffer = PMA_convert_string($GLOBALS['charset'], $GLOBALS['charset_of_file'], $dump_buffer);
                 }
                 // as bzipped
-                if ($GLOBALS['compression'] == 'bzip'  && @function_exists('bzcompress')) {
+                if ($GLOBALS['compression'] == 'bzip2'  && @function_exists('bzcompress')) {
                     $dump_buffer = bzcompress($dump_buffer);
                 }
                 // as a gzipped file
@@ -222,7 +222,7 @@ $output_charset_conversion = $asfile && $GLOBALS['PMA_recoding_engine'] != PMA_C
     && $type != 'xls';
 
 // Use on the fly compression?
-$onfly_compression = $GLOBALS['cfg']['CompressOnFly'] && ($compression == 'gzip' || $compression == 'bzip');
+$onfly_compression = $GLOBALS['cfg']['CompressOnFly'] && ($compression == 'gzip' || $compression == 'bzip2');
 if ($onfly_compression) {
     $memory_limit = trim(@ini_get('memory_limit'));
     // 2 MB as default
@@ -271,9 +271,7 @@ if ($asfile) {
         }
     }
     $filename = PMA_expandUserString($filename_template);
-
-    // convert filename to iso-8859-1, it is safer
-    $filename = PMA_convert_string($charset, 'iso-8859-1', $filename);
+    $filename = PMA_sanitize_filename($filename);
 
     // Grab basic dump extension and mime type
     // Check if the user already added extension; get the substring where the extension would be if it was included
@@ -287,7 +285,7 @@ if ($asfile) {
 
     // If dump is going to be compressed, set correct mime_type and add
     // compression to extension
-    if ($compression == 'bzip') {
+    if ($compression == 'bzip2') {
         $filename  .= '.bz2';
         $mime_type = 'application/x-bzip2';
     } elseif ($compression == 'gzip') {
@@ -651,7 +649,7 @@ if (!empty($asfile)) {
         }
     }
     // 2. as a bzipped file
-    elseif ($compression == 'bzip') {
+    elseif ($compression == 'bzip2') {
         if (@function_exists('bzcompress')) {
             $dump_buffer = bzcompress($dump_buffer);
         }

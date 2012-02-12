@@ -1,6 +1,96 @@
 phpMyAdmin - ChangeLog
 ======================
 
+3.4.9.0 (2011-12-21)
+- bug #3442028 [edit] Inline editing enum fields with null shows no dropdown
+- bug #3442004 [interface] DB suggestion not correct for user with underscore
+- bug #3438420 [core] Magic quotes removed in PHP 5.4
+- bug #3398788 [session] No feedback when result is empty (signon auth_type)
+- bug #3384035 [display] Problems regarding ShowTooltipAliasTB
+- bug #3306875 [edit] Can't rename a database that contains views
+- bug #3452506 [edit] Unable to move tables with triggers
+- bug #3449659 [navi] Fast filter broken with table tree
+- bug #3448485 [GUI] Firefox favicon frameset regression
+- [core] Better compatibility with mysql extension
+- [security] Self-XSS on export options (export server/database/table), see PMASA-2011-20
+- [security] Self-XSS in setup (host parameter), see PMASA-2011-19
+
+3.4.8.0 (2011-12-01)
+- bug #3425230 [interface] enum data split at space char (more space to edit)
+- bug #3426840 [interface] ENUM/SET editor can't handle commas in values
+- bug #3427256 [interface] no links to browse/empty views and tables
+- bug #3430377 [interface] Deleted search results remain visible
+- bug #3428627 [import] ODS import ignores memory limits
+- bug #3426836 [interface] Visual column separation
+- bug #3428065 [parser] TRUE not recognized by parser
++ patch #3433770 [config] Make location of php-gettext configurable
+- patch #3430291 [import] Handle conflicts in some open_basedir situations
+- bug #3431427 [display] Dropdown results - setting NULL does not work
+- patch #3428764 [edit] Inline edit on multi-server configuration
+- patch #3437354 [core] Notice: Array to string conversion in PHP 5.4
+- [interface] When ShowTooltipAliasTB is true, VIEW is wrongly shown as the
+  view name in main panel db Structure page
+- bug #3439292 [core] Fail to synchronize column with name of keyword
+- bug #3425156 [interface] Add column after drop
+- [interface] Avoid showing the password in phpinfo()'s output
+- bug #3441572 [GUI] 'newer version of phpMyAdmin' message not shown in IE8
+- bug #3407235 [interface] Entering the key through a lookup window does not reset NULL
+- [security] Self-XSS on database names (Synchronize), see PMASA-2011-18
+- [security] Self-XSS on database names (Operations/rename), see PMASA-2011-18
+- [security] Self-XSS on column type (Create index), see PMASA-2011-18
+- [security] Self-XSS on column type (table Search), see PMASA-2011-18
+- [security] Self-XSS on invalid query (table overview), see PMASA-2011-18
+
+3.4.7.1 (2011-11-10)
+- [security] Fixed possible local file inclusion in XML import
+(CVE-2011-4107).
+
+3.4.7.0 (2011-10-23)
+- bug #3418610 [interface] Links in navigation when $cfg['MainPageIconic'] = false
+- bug #3418849 [interface] Inline edit shows dropdowns even after closing
+- bug [view] View renaming did not work
+- bug [navi] Wrong icon for view (MySQL 5.5)
+- bug #3420229 [doc] Missing documentation section
+- bug #3423725 [pdf] Broken PDF file when exporting database to PDF
+- [core] Allow to set language in URL
+- bug #3425184 [doc] Fix links to PHP documentation
+- bug #3426031 [export] Export to bzip2 is not working
+
+3.4.6.0 (2011-10-16)
+- patch #3404173 InnoDB comment display with tooltips/aliases
+- bug #3404886 [navi] Edit SQL statement after error
+- bug #3403165 [interface] Collation not displayed for long enum fields
+- bug #3399951 [export] Config for export compression not used
+- bug #3400690 [privileges] DB-specific privileges won't submit
+- bug #3410604 [config] Configuration storage incorrect suggested table name 
+- bug #3383572 [interface] Cannot execute saved query
+- bug #3411535 [display] Full text button unchecks results display options
+- bug #3411224 [display] Broken binary column when 'Show binary contents' is not set
+- bug #3411633 [core] Call to undefined function PMA_isSuperuser()
+- bug #3413743 [interface] Display options link missing after search
+- bug #3324161 [core] CSP policy causing designer JS buttons to fail
+- bug #3412862 [relation] Relations/constraints are dropped/created on every change
+- bug #3390832 [display] Delete records from last page breaks search
+- bug #3392150 [schema] PMA_User_Schema::processUserChoice() is broken
+- bug #3414744 [core] External link fails in 3.4.5
+- patch #3314626 [display] CharTextareaRows is not respected
+- bug #3417089 [synchronize] Extraneous db choices
+- [security] Fixed local path disclosure vulnerability, see PMASA-2011-15
+- [security] Fixed XSS in setup (host/verbose parameter), see PMASA-2011-16
+
+3.4.5.0 (2011-09-14)
+- bug #3375325 [interface] Page list in navigation frame looks odd
+- bug #3313235 [interface] Error div misplaced
+- bug #3374802 [interface] Comment on a column breaks inline editing
+- patch #3383711 [display] Order by a column in a view doesn't work in some cases
+- bug #3386434 [interface] Add missing space to server status
+- [core] Remove library PHPExcel, due to license issues
+- [export] Remove native Excel export modules (xls and xlsx formats)
+- [import] Remove native Excel import modules (xls and xlsx formats)
+- bug #3392920 [edit] BLOB emptied after editing another column
+- [security] Fixed XSS in Inline Edit on save action, see PMASA-2011-14
+- [security] Fixed XSS with db/table/column names, see PMASA-2011-14 
+
 3.4.4.0 (2011-08-24)
 - bug #3323060 [parser] SQL parser breaks AJAX requests if query has unclosed quotes
 - bug #3323101 [parser] Invalid escape sequence in SQL parser

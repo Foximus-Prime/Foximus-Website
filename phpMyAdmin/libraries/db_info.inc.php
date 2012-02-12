@@ -66,6 +66,19 @@ $pos = $_SESSION['tmp_user_values']['table_limit_offset'];
  */
 function PMA_fillTooltip(&$tooltip_truename, &$tooltip_aliasname, $table)
 {
+    if (strstr($table['Comment'], '; InnoDB free') === false) {
+        if (!strstr($table['Comment'], 'InnoDB free') === false) {
+            // here we have just InnoDB generated part
+            $table['Comment'] = '';
+        }
+    } else {
+        // remove InnoDB comment from end, just the minimal part (*? is non greedy)
+        $table['Comment'] = preg_replace('@; InnoDB free:.*?$@', '', $table['Comment']);
+    }
+    // views have VIEW as comment so it's not a real comment put by a user
+    if ('VIEW' == $table['Comment']) {
+        $table['Comment'] = '';
+    }
     if (empty($table['Comment'])) {
         $table['Comment'] = $table['Name'];
     } else {
@@ -74,7 +87,7 @@ function PMA_fillTooltip(&$tooltip_truename, &$tooltip_aliasname, $table)
     }
 
     if ($GLOBALS['cfg']['ShowTooltipAliasTB']
-     && $GLOBALS['cfg']['ShowTooltipAliasTB'] != 'nested') {
+     && $GLOBALS['cfg']['ShowTooltipAliasTB'] !== 'nested') {
         $tooltip_truename[$table['Name']] = $table['Comment'];
         $tooltip_aliasname[$table['Name']] = $table['Name'];
     } else {

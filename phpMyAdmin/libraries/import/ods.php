@@ -14,6 +14,13 @@ if (! defined('PHPMYADMIN')) {
 }
 
 /**
+ * We need way to disable external XML entities processing.
+ */
+if (!function_exists('libxml_disable_entity_loader')) {
+    return;
+}
+
+/**
  * The possible scopes for $plugin_param are: 'table', 'database', and 'server'
  */
 
@@ -34,9 +41,6 @@ if (isset($plugin_list)) {
     /* We do not define function when plugin is just queried for information above */
     return;
 }
-
-ini_set('memory_limit', '128M');
-set_time_limit(120);
 
 $i = 0;
 $len = 0;
@@ -62,6 +66,11 @@ while (! ($finished && $i >= $len) && ! $error && ! $timeout_passed) {
 }
 
 unset($data);
+
+/**
+ * Disable loading of external XML entities.
+ */
+libxml_disable_entity_loader();
 
 /**
  * Load the XML string

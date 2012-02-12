@@ -555,19 +555,27 @@ function PMA_displayTableHeaders(&$is_display, &$fields_meta, $fields_cnt = 0, $
         echo '</div>';
 
         // prepare full/partial text button or link
+        $url_params_full_text = array(
+            'db' => $db,
+            'table' => $table,
+            'sql_query' => $sql_query,
+            'goto' => $goto,
+            'full_text_button' => 1
+        );
+
         if ($_SESSION['tmp_user_values']['display_text']=='F') {
             // currently in fulltext mode so show the opposite link
             $tmp_image_file = $GLOBALS['pmaThemeImage'] . 's_partialtext.png';
             $tmp_txt = __('Partial texts');
-            $url_params['display_text'] = 'P';
+            $url_params_full_text['display_text'] = 'P';
         } else {
             $tmp_image_file = $GLOBALS['pmaThemeImage'] . 's_fulltext.png';
             $tmp_txt = __('Full texts');
-            $url_params['display_text'] = 'F';
+            $url_params_full_text['display_text'] = 'F';
         }
 
         $tmp_image = '<img class="fulltext" src="' . $tmp_image_file . '" alt="' . $tmp_txt . '" title="' . $tmp_txt . '" />';
-        $tmp_url = 'sql.php' . PMA_generate_common_url($url_params);
+        $tmp_url = 'sql.php' . PMA_generate_common_url($url_params_full_text);
         $full_or_partial_text_link = PMA_linkOrButton($tmp_url, $tmp_image, array(), false);
         unset($tmp_image_file, $tmp_txt, $tmp_url, $tmp_image);
 
@@ -766,8 +774,10 @@ function PMA_displayTableHeaders(&$is_display, &$fields_meta, $fields_cnt = 0, $
             // the orgname member does not exist for all MySQL versions
             // but if found, it's the one on which to sort
             $name_to_use_in_sort = $fields_meta[$i]->name;
+            $is_orgname = false;
             if (isset($fields_meta[$i]->orgname) && strlen($fields_meta[$i]->orgname)) {
                 $name_to_use_in_sort = $fields_meta[$i]->orgname;
+                $is_orgname = true;
             }
             // $name_to_use_in_sort might contain a space due to
             // formatting of function expressions like "COUNT(name )"
@@ -794,12 +804,15 @@ function PMA_displayTableHeaders(&$is_display, &$fields_meta, $fields_cnt = 0, $
             // 2.1.3 Check the field name for a bracket.
             //       If it contains one, it's probably a function column
             //       like 'COUNT(`field`)'
-            if (strpos($name_to_use_in_sort, '(') !== false) {
+            //       It still might be a column name of a view. See bug #3383711
+            //       Check is_orgname.
+            if (strpos($name_to_use_in_sort, '(') !== false && ! $is_orgname) {
                 $sort_order = ' ORDER BY ' . $name_to_use_in_sort . ' ';
             } else {
                 $sort_order = ' ORDER BY ' . $sort_tbl . PMA_backquote($name_to_use_in_sort) . ' ';
             }
             unset($name_to_use_in_sort);
+            unset($is_orgname);
 
             // 2.1.4 Do define the sorting URL
             if (! $is_in_sort) {
@@ -983,14 +996,16 @@ function PMA_buildValueDisplay($class, $condition_field, $value) {
 /**
  * Prepares the display for a null value
  *
- * @param   string  $class
- * @param   string  $condition_field
+ * @param string $class           class of table cell
+ * @param bool   $condition_field whether to add CSS class condition
+ * @param object $meta            the meta-information about this field
+ * @param string $align           cell allignment
  *
  * @return  string  the td
  */
-function PMA_buildNullDisplay($class, $condition_field) {
+function PMA_buildNullDisplay($class, $condition_field, $meta, $align = '') {
     // the null class is needed for inline editing
-    return '<td align="right"' . ' class="' . $class . ($condition_field ? ' condition' : '') . ' null"><i>NULL</i></td>';
+    return '<td ' . $align . ' class="' . PMA_addClass($class, $condition_field, $meta, '') . ' null"><i>NULL</i></td>';
 }
 
 /**
@@ -1346,7 +1361,7 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
                 //       so use the $pointer
 
                 if (!isset($row[$i]) || is_null($row[$i])) {
-                    $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field);
+                    $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field, $meta, 'align="right"');
                 } elseif ($row[$i] != '') {
 
                     $nowrap = ' nowrap';
@@ -1369,7 +1384,7 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
 
                 if (stristr($field_flags, 'BINARY')) {
                     if (!isset($row[$i]) || is_null($row[$i])) {
-                        $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field);
+                        $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field, $meta);
                     } else {
                         // for blobstreaming
                         // if valid BS reference exists
@@ -1385,7 +1400,7 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
                 // not binary:
                 } else {
                     if (!isset($row[$i]) || is_null($row[$i])) {
-                        $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field);
+                        $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field, $meta);
                     } elseif ($row[$i] != '') {
                         // if a transform function for blob is set, none of these replacements will be made
                         if (PMA_strlen($row[$i]) > $GLOBALS['cfg']['LimitChars'] && $_SESSION['tmp_user_values']['display_text'] == 'P') {
@@ -1413,7 +1428,7 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
             // n o t   n u m e r i c   a n d   n o t   B L O B
             } else {
                 if (!isset($row[$i]) || is_null($row[$i])) {
-                    $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field);
+                    $vertical_display['data'][$row_no][$i]     =  PMA_buildNullDisplay($class, $condition_field, $meta);
                 } elseif ($row[$i] != '') {
                     // support blanks in the key
                     $relation_id = $row[$i];
@@ -1427,6 +1442,7 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
 
                     // displays special characters from binaries
                     $field_flags = PMA_DBI_field_flags($dt_result, $i);
+                    $is_html = false;
                     if (isset($meta->_type) && $meta->_type === MYSQLI_TYPE_BIT) {
                         $row[$i]     = PMA_printable_bit_value($row[$i], $meta->length);
                         // some results of PROCEDURE ANALYSE() are reported as
@@ -1445,18 +1461,22 @@ function PMA_displayTableBody(&$dt_result, &$is_display, $map, $analyzed_sql) {
                             // we show the BINARY message and field's size
                             // (or maybe use a transformation)
                             $row[$i] = PMA_handle_non_printable_contents('BINARY', $row[$i], $transform_function, $transform_options, $default_function, $meta, $_url_params);
+                            $is_html = true;
                         }
                     }
 
-                    // transform functions may enable no-wrapping:
-                    $function_nowrap = $transform_function . '_nowrap';
-                    $bool_nowrap = (($default_function != $transform_function && function_exists($function_nowrap)) ? $function_nowrap($transform_options) : false);
+                    if ($is_html) {
+                        $vertical_display['data'][$row_no][$i]     = PMA_buildValueDisplay($class, $condition_field, $row[$i]);
+                    } else {
+                        // transform functions may enable no-wrapping:
+                        $function_nowrap = $transform_function . '_nowrap';
+                        $bool_nowrap = (($default_function != $transform_function && function_exists($function_nowrap)) ? $function_nowrap($transform_options) : false);
 
-                    // do not wrap if date field type
-                    $nowrap = ((preg_match('@DATE|TIME@i', $meta->type) || $bool_nowrap) ? ' nowrap' : '');
-                    $where_comparison = ' = \'' . PMA_sqlAddslashes($row[$i]) . '\'';
-                    $vertical_display['data'][$row_no][$i]     = '<td ' . PMA_prepare_row_data($class, $condition_field, $analyzed_sql, $meta, $map, $row[$i], $transform_function, $default_function, $nowrap, $where_comparison, $transform_options, $is_field_truncated);
-
+                        // do not wrap if date field type
+                        $nowrap = ((preg_match('@DATE|TIME@i', $meta->type) || $bool_nowrap) ? ' nowrap' : '');
+                        $where_comparison = ' = \'' . PMA_sqlAddslashes($row[$i]) . '\'';
+                        $vertical_display['data'][$row_no][$i]     = '<td ' . PMA_prepare_row_data($class, $condition_field, $analyzed_sql, $meta, $map, $row[$i], $transform_function, $default_function, $nowrap, $where_comparison, $transform_options, $is_field_truncated);
+                    }
                 } else {
                     $vertical_display['data'][$row_no][$i]     = PMA_buildEmptyDisplay($class, $condition_field, $meta);
                 }
@@ -1811,6 +1831,8 @@ function PMA_displayTable_checkConfigParams()
     } elseif (isset($_REQUEST['display_options_form'])) {
         // we know that the checkbox was unchecked
         unset($_SESSION['tmp_user_values']['query'][$sql_md5]['display_binary']);
+    } elseif (isset($_REQUEST['full_text_button'])) {
+        // do nothing to keep the value that is there in the session
     } else {
         // selected by default because some operations like OPTIMIZE TABLE
         // and all queries involving functions return "binary" contents,
@@ -1824,6 +1846,8 @@ function PMA_displayTable_checkConfigParams()
     } elseif (isset($_REQUEST['display_options_form'])) {
         // we know that the checkbox was unchecked
         unset($_SESSION['tmp_user_values']['query'][$sql_md5]['display_binary_as_hex']);
+    } elseif (isset($_REQUEST['full_text_button'])) {
+        // do nothing to keep the value that is there in the session
     } else {
         // display_binary_as_hex config option
         if (isset($GLOBALS['cfg']['DisplayBinaryAsHex']) && true === $GLOBALS['cfg']['DisplayBinaryAsHex']) {

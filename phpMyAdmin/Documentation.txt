@@ -1,4 +1,4 @@
-phpMyAdmin 3.4.4 Documentation
+phpMyAdmin 3.4.9 Documentation
 
   * Top
   * Requirements
@@ -36,6 +36,8 @@ Requirements
         slower.
       + To support upload progress bars, see FAQ 2.9.
       + To support BLOB streaming, see PHP and MySQL requirements in FAQ 6.25.
+      + To support XML and Open Document Spreadsheet importing, you need PHP
+        5.2.17 or newer and the libxml extension.
   * MySQL 5.0 or newer (details);
   * Web browser with cookies enabled.
 
@@ -56,9 +58,9 @@ Currently phpMyAdmin can:
   * load text files into tables
   * create^1 and read dumps of tables
   * export^1 data to various formats: CSV, XML, PDF, ISO/IEC 26300 -
-    OpenDocument Text and Spreadsheet, Word, Excel and L^AT[E]X formats
-  * import data and MySQL structures from Microsoft Excel and OpenDocument
-    spreadsheets, as well as XML, CSV, and SQL files
+    OpenDocument Text and Spreadsheet, Word, and L^AT[E]X formats
+  * import data and MySQL structures from OpenDocument spreadsheets, as well as
+    XML, CSV, and SQL files
   * administer multiple servers
   * manage MySQL users and privileges
   * check referential integrity in MyISAM tables
@@ -1012,8 +1014,8 @@ $cfg['LeftFrameLight'] boolean
     tables in the left frame (smaller page). Only in Non-Lightmode you can use
     the feature to display nested folders using $cfg['LeftFrameTableSeparator']
 $cfg['LeftFrameDBTree'] boolean
-    In light mode, defines whether to display the names of databases (in the
-    selector) using a tree, see also $cfg['LeftFrameDBSeparator'].
+    Defines whether to display the names of databases (in the selector) using a
+    tree, see also $cfg['LeftFrameDBSeparator'].
 $cfg['LeftFrameDBSeparator'] string or array
     The string used to separate the parts of the database name when showing
     them in a tree. Alternatively you can specify more strings in an array and
@@ -1404,8 +1406,8 @@ $cfg['SaveDir'] string
 $cfg['TempDir'] string
     The name of the directory where temporary files can be stored.
 
-    This is needed for native MS Excel export, see FAQ 6.23 and to work around
-    limitations of open_basedir for uploaded files, see FAQ 1.11.
+    This is needed to work around limitations of open_basedir for uploaded
+    files, see FAQ 1.11.
 
     If the directory where phpMyAdmin is installed is subject to an
     open_basedir restriction, you need to create a temporary directory in some
@@ -1523,6 +1525,9 @@ $cfg['UserprefsDisallow'] array
     Contains names of configuration options (keys in $cfg array) that users
     can't set through user preferences. For possible values, refer to libraries
     /config/user_preferences.forms.php.
+$cfg['UserprefsDeveloperTab'] boolean
+    Activates in the user preferences a tab containing options for developers
+    of phpMyAdmin.
 $cfg['TitleTable'] string
 $cfg['TitleDatabase'] string
 $cfg['TitleServer'] string
@@ -2206,6 +2211,7 @@ scenarios, however you might want to adjust at least following parameters:
   * suhosin.post.max_array_index_length should be increased (eg. 256)
   * suhosin.request.max_totalname_length should be increased (eg. 8192)
   * suhosin.post.max_totalname_length should be increased (eg. 8192)
+  * suhosin.get.max_value_length should be increased (eg. 1024)
   * suhosin.sql.bailout_on_error needs to be disabled (the default)
   * suhosin.log.* should not include SQL, otherwise you get big slowdown
 
@@ -2510,29 +2516,11 @@ of the columns.
 This has been a known limitation of phpMyAdmin since the beginning and it's not
 likely to be solved in the future.
 
-3.15 When I import an Excel spreadsheet, some cells with calculations do not
-display correctly.
+3.15 (withdrawn).
 
-phpMyAdmin uses the PHPExcel library to parse Excel XLS and XLSX spreadsheets.
-Therefore, any limitations that are listed on their page regarding Excel
-calculations will also apply here.
+3.16 (withdrawn).
 
-PHPExcel will be kept up to date so as to make all improvements available to
-phpMyAdmin users.
-
-3.16 When I compress (gzip, bzip2, zip) an Excel workbook and attempt to import
-it, nothing happens.
-
-Since Excel XLSX workbooks are already compressed, there is often times only a
-small benefit from compressing them yet again. Support for compressed Excel
-XLSX and XLS workbooks may be added in the future.
-
-3.17 When I import an Excel spreadsheet, my custom cell types are not
-represented as they are in Excel.
-
-Excel's internal representation of custom cell types is rather muddled
-(especially in Excel 97-2003 binary XLS files). If possible, consider using a
-built-in type. These are almost always guarenteed to import correctly.
+3.17 (withdrawn).
 
 3.18 When I import a CSV file that contains multiple tables, they are lumped
 together into a single table.
@@ -2577,8 +2565,7 @@ Suggestions:
   * All your phpMyAdmin files should be chown -R phpmy.apache, where phpmy is a
     user whose password is only known to you, and apache is the group under
     which Apache runs.
-  * You should use PHP safe mode, to protect from other users that try to
-    include your config.inc.php in their scripts.
+  * Follow security recommendations for PHP and your webserver.
 
 4.3 I get errors about not being able to include a file in /lang or in /
 libraries.
@@ -3096,21 +3083,14 @@ values and choose one. To change the default limit of 100, see $cfg
 6.22 Bookmarks: Can I execute a default bookmark automatically when entering
 Browse mode for a table?
 
-Yes. If a bookmark has the same label as a table name, it will be executed.
+Yes. If a bookmark has the same label as a table name and it's not a public
+bookmark, it will be executed.
 
-6.23 Export: I heard phpMyAdmin can export Microsoft Excel files, how can I
-enable that?
+6.23 Export: I heard phpMyAdmin can export Microsoft Excel files?
 
-You can use CSV for Microsoft Excel, which works out of the box, but phpMyAdmin
-supports direct export to Microsoft Excel version 97 and newer. For this to
-work, you need to set $cfg['TempDir'] to a place where the web server user can
-write (for example './tmp').
-
-To create the temporary directory on a UNIX-based system, you can do:
-
-cd phpMyAdmin
-mkdir tmp
-chmod o+rwx tmp
+You can use CSV for Microsoft Excel, which works out of the box.
+Since phpMyAdmin 3.4.5 support for direct export to Microsoft Excel version 97
+and newer was dropped.
 
 6.24 Now that phpMyAdmin supports native MySQL 4.1.x column comments, what
 happens to my column comments stored in pmadb?
@@ -3401,7 +3381,7 @@ Credits, in chronological order
       + creator of the phpmyadmin project
       + maintainer from 1998 to summer 2000
   * Marc Delisle <marc_at_infomarc.info>
-      + multi-language version
+      + multi-language version in December 1998
       + various fixes and improvements
       + SQL analyser (most of it)
       + current project maintainer
@@ -3409,7 +3389,6 @@ Credits, in chronological order
       + started SourceForge phpMyAdmin project in March 2001
       + sync'ed different existing CVS trees with new features and bugfixes
       + multi-language improvements, dynamic language selection
-      + current project maintainer
       + many bugfixes and improvements
   * Lo?c Chapeaux <lolo_at_phpheaven.net>
       + rewrote and optimized javascript, DHTML and DOM stuff
