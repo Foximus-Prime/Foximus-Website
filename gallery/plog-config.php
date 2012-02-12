@@ -6,7 +6,7 @@
  * If you want to change the database connection information, you may also edit this file manually
  * after Plogger has been installed. */
  
-include_once("../inc/constants.php");
+include_once("/hermes/web10/b2818/pow.cyberdentoncom/robotics/inc/constants.php");
 
 /* MySQL hostname */
 define('PLOGGER_DB_HOST', DB_SERVER);
