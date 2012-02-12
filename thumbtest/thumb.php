@@ -1,5 +1,3 @@
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <?php
 /**
  * Create a thumbnail
@@ -9,7 +7,7 @@
  
 // define allowed image sizes
 $sizes = array(
-	'157x153',
+	'616x320',
 	'616x320',
 );
 
@@ -37,15 +35,21 @@ if (!file_exists($image)) {
 	error('no source image');
 }
 
-// generate the thumbnail
+// generate the thumbnail/*
 require('../phpThumb/phpthumb.class.php');
 $phpThumb = new phpThumb();
 $phpThumb->setSourceFilename($image);
+if (include_once('../phpThumb/phpThumb.config.php')) {
+    foreach ($PHPTHUMB_CONFIG as $key => $value) {
+        $keyname = 'config_'.$key;
+        $phpThumb->setParameter($keyname, $value);
+    }
+}
+
 $phpThumb->setParameter('w',$width);
 $phpThumb->setParameter('h',$height);
-$phpThumb->setParameter('h',$height);
 $phpThumb->setParameter('zc',1);
-$phpThumb->setParameter('fltr[]','wmi|../img/pics/fox.png|BR');
+$phpThumb->setParameter('fltr','wmi|../img/pics/fox.png|BR');
 $phpThumb->setParameter('f',substr($thumb,-3,3)); // set the output format
 //$phpThumb->setParameter('far','C'); // scale outside
 //$phpThumb->setParameter('bg','FFFFFF'); // scale outside
