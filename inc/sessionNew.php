@@ -40,7 +40,7 @@ class Session
    function startSession(){
       global $database;  //The database connection
 	  
-	  session_name("LDSession");
+      session_name("LDSession");
       session_start();   //Tell PHP to start the session
 
       /* Determine if user is logged in */

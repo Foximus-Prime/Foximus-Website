@@ -19,7 +19,7 @@ include_once("inc/sessionNew.php");
     <link rel="stylesheet" href="js/mylibs/countdown/jquery.countdown.css" type="text/css" media="screen" />
 <?php 
 	include_once("inc/header.php");
-
+        
 	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 1");
 ?>
         <div class="container_12">
