@@ -61,7 +61,7 @@ $config['baseurl'] = $plog_random_images_site_url;
 ?>
 <div class="featured">
     <a href="<?php echo generate_url('picture', $id); ?>" title="<?php echo addcslashes($cap_or_name, '"') ?>">
-        <img title="<?php echo addcslashes($cap_or_name, '"'); ?>" src="<?php echo 'phpThumb/phpThumb.php?src=../gallery/'.'plog-content/images/'.$path.'&amp;w=616&amp;h=320&amp;zc=1&amp;fltr&#091;&#093;=wmi&#124;../img/pics/fox.png&#124;BR'; ?>" alt="" />
+        <img title="<?php echo addcslashes($cap_or_name, '"'); ?>" src="<?php echo 'http://robotics.cyberdenton.com/thumb/616x320/images/../gallery/'.'plog-content/images/'.$path; ?>" alt="" />
     </a>
 </div>
 <?php } ?>
