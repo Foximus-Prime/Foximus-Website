@@ -464,6 +464,7 @@ label.opt {font-weight:normal;}
 	display:inline;
 	text-align:center;
 	float:left;
+	margin-left: 2px;
 }
 
 .clubMember img {
