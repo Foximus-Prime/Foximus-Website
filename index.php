@@ -89,16 +89,16 @@ include_once("inc/sessionNew.php");
             <div class="clear"></div>
 
 <?php  include_once("inc/js.php"); ?>
-		<!-- Twitter -->
-	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
-	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
+    	<!-- Hover Intent -->
+	<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
         <!-- Aviva Slider -->
 	<script src="js/aviaslider/prettyPhoto/js/jquery.prettyPhoto.js" type="text/javascript"></script>	
 	<script type='text/javascript' src='js/aviaslider/jquery.aviaSlider.min.js'></script>
 	<script type='text/javascript' src='js/aviaslider/custom.min.js'></script>
-    	<!-- Hover Intent -->
-	<script type='text/javascript' src='js/jquery.hoverIntent.minified.js'></script>
     	<!-- Countdown -->
     <script type='text/javascript' src='js/mylibs/countdown/jquery.countdown.js'></script>
-    <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>
+    <script type='text/javascript' src='js/mylibs/countdown/script.js'></script>		
+    	<!-- Twitter -->
+	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
+	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
 <?php  include_once("inc/footer.php"); ?>
