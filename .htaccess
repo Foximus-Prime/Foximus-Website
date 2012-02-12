@@ -415,7 +415,7 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 http://robotics.cyberdenton.com404.html
+ErrorDocument 404 http://robotics.cyberdenton.com/404.html
 
 # ----------------------------------------------------------------------
 
