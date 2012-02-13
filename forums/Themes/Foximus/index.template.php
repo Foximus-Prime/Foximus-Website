@@ -441,14 +441,14 @@ function template_html_below()
                     <a href="https://github.com/Foximus-Prime">
                         <img src="http://robotics.cyberdenton.com/img/github_logo.png" alt="We\'re on Github!" width="88" height="31">
                     </a>
-                    <a href="http://validator.w3.org/check?uri=referer">
-                        <img src="http://robotics.cyberdenton.com/img/html5.png" alt="Uses HTML5." width="88" height="31">
+                    <a href="http://en.wikipedia.org/wiki/HTML5">
+                        <img src="img/html5.png" alt="Uses HTML5." width="88" height="31">
                     </a>
-                    <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Frobotics.cyberdenton.com&profile=css3&usermedium=all&warning=no&vextwarning=true&lang=en">
-                        <img src="http://robotics.cyberdenton.com/img/css3.png" alt="Uses CSS3." width="88" height="31">
+                    <a href="http://www.w3schools.com/css3/default.asp">
+                        <img src="img/css3.png" alt="Uses CSS3." width="88" height="31">
                     </a>
                     <a href="http://www.php.net/">
-                        <img src="http://robotics.cyberdenton.com/img/php.png" alt="Uses PHP." width="88" height="31">
+                        <img src="img/php.png" alt="Uses PHP." width="88" height="31">
                     </a>
                     <a href="http://www.mysql.com/">
                         <img src="http://robotics.cyberdenton.com/img/mysql.png" alt="Uses MySQL." width="88" height="31">
