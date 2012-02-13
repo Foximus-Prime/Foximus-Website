@@ -3,7 +3,7 @@
 # BEGIN Plogger
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteBase /austin/gallery
+RewriteBase /gallery
 RewriteCond %{REQUEST_URI} !(\.|/$)
 RewriteRule ^.*$ http://robotics.cyberdenton.com%{REQUEST_URI}/ [R=301,L]
 RewriteCond %{REQUEST_FILENAME} -d [OR]
