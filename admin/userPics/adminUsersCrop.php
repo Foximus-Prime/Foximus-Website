@@ -1,5 +1,6 @@
 <?php
 include_once("../../inc/sessionNew.php");
+ini_set("memory_limit","80M");
 
 /**
  * User not an administrator, redirect to main page
@@ -18,7 +19,8 @@ if(!$session->isAdmin()){
 		$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
 		imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
-		
+		unset($img_r);
+
 		if(isset($_POST['rotate']))
 			$dst_r = imagerotate($dst_r, $_POST['rotate'], 0);
 			
@@ -32,7 +34,7 @@ if(!$session->isAdmin()){
 		$subSRC = $_POST['image'];
 		if(strstr($subSRC,'plog-content/images/'))
 			$src = $subSRC;
-		else {
+ 		else {
 			$src = 'http://robotics.cyberdenton.com/gallery/plog-content/images/'.rstrstr($subSRC,'build/');
 			$src = substr($src,0,strlen($src)-1).'.jpg';
 		}

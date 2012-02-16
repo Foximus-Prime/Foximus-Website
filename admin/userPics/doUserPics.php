@@ -18,7 +18,7 @@ if(!$session->isAdmin()){
 		$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team` FROM `user`");
 		for($i = 0; $i < mysql_num_rows($rs); $i++) {
 			$msresult[$i] = mysql_fetch_array($rs, MYSQL_NUM);
-			if($msresult[$i][2] != 0)
+			if(intval(substr(strval($msresult[$i][2]),$q,1),16) != 0)
 				$posPics[$i] = $msresult[$i];
 		}
 		echo '<form id="image" action="doUserPics.php" method="post">
