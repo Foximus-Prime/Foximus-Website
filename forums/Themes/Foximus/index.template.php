@@ -179,7 +179,7 @@ function template_html_above()
 <a href="http://usfirst.org/"><div id="LeftSide"></div></a>
   <div id="container">
 	 <header>
-		 <div class="grill" id="topGrill">
+	 	<div class="grill" id="topGrill">
 				<div id="menuL"></div>
 				<div id="menuR"></div>
 				<div id="menuCont">
@@ -188,30 +188,30 @@ function template_html_above()
 						  <li>
 								<a href="#">About Us</a>
 								<ul class="subnav">
-									 <li><a href="pages/about/current.php">Current Team</a></li>
-									 <li><a href="pages/about/sponsors.php">Sponsors</a></li>
-									 <li><a href="pages/about/website.php">Website</a></li>
-									 <li><a href="pages/about/history.php">History</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/about/current.php">Current Team</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/about/sponsors.php">Sponsors</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/about/website.php">Website</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/about/history.php">History</a></li>
 								</ul>
 						  </li>
-						  <li><a href="pages/first.php">US FIRST Info</a></li>
+						  <li><a href="http://robotics.cyberdenton.com/pages/first.php">US FIRST Info</a></li>
 						  <li>
 								<a href="#">FRC</a>
 								<ul class="subnav">
-									 <li><a href="pages/frc/game.php">2012 Game</a></li>
-									 <li><a href="pages/frc/robot.php">Our Robot</a></li>
-									 <li><a href="pages/frc/archive.php">Robot Archive</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/frc/game.php">2012 Game</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/frc/robot.php">Our Robot</a></li>
+									 <!--<li><a href="http://robotics.cyberdenton.com/pages/frc/archive.php">Robot Archive</a></li>-->
 								</ul>
 						  </li>
 					 </ul>
 					 <ul id="mainMenuR" class="topnav">
-						  <li><a href="forums/">Forums</a></li>
+						  <li><a href="http://robotics.cyberdenton.com/forums/">Forums</a></li>
 						  <li>
 								<a href="#">Media</a>
 								<ul class="subnav">
-									 <li><a href="gallery/">Photo Gallery</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/gallery/">Photo Gallery</a></li>
 									 <li><a href="http://www.youtube.com/user/FoximusPrime3695?feature=mhee">Video Archive</a></li>
-									 <li><a href="pages/media/resources.php">Resources</a></li>
+									 <li><a href="http://robotics.cyberdenton.com/pages/media/resources.php">Resources</a></li>
 								</ul>
 						  </li>
 						  <li>
@@ -221,7 +221,7 @@ function template_html_above()
 									 <li><a href="http://www.w3schools.com/">Website Help</a></li>
 								</ul>
 						  </li>
-						  <li><a href="pages/contact.php">Contact</a></li>
+						  <li><a href="http://robotics.cyberdenton.com/pages/contact.php">Contact</a></li>
 					 </ul>
 			  </div>
 		  </div>
@@ -435,27 +435,36 @@ function template_html_below()
 						  <h3>Badges</h3>
 					 </div>
 					 <article class="contentCont" style="border-bottom-width: 0; height:31px; display:block;">
-                    <a href="http://978.gs" id="gs-overlay-badge" style="outline: 0;">
-                        <img src="http://978.gs/resources/img/978-badge.png" alt="This site is built with 978 grid system" width="88" height="31"  style="border: 0;">
-                    </a>
-                    <a href="https://github.com/Foximus-Prime">
-                        <img src="http://robotics.cyberdenton.com/img/github_logo.png" alt="We\'re on Github!" width="88" height="31">
-                    </a>
-                    <a href="http://en.wikipedia.org/wiki/HTML5">
-                        <img src="img/html5.png" alt="Uses HTML5." width="88" height="31">
-                    </a>
-                    <a href="http://www.w3schools.com/css3/default.asp">
-                        <img src="img/css3.png" alt="Uses CSS3." width="88" height="31">
-                    </a>
-                    <a href="http://www.php.net/">
-                        <img src="img/php.png" alt="Uses PHP." width="88" height="31">
-                    </a>
-                    <a href="http://www.mysql.com/">
-                        <img src="http://robotics.cyberdenton.com/img/mysql.png" alt="Uses MySQL." width="88" height="31">
-                    </a>
-                    <a href="http://jquery.com/">
-                        <img src="http://robotics.cyberdenton.com/img/jquery.png" alt="Uses jQuery." width="88" height="31">
-                    </a>
+						  <a href="http://978.gs" id="gs-overlay-badge" style="outline: 0;">
+								<img src="http://978.gs/resources/img/978-badge.png" alt="This site is built with 978 grid system" width="88" height="31"  style="border: 0;">
+						  </a>
+						  <a href="https://github.com/Foximus-Prime">
+								<img src="http://robotics.cyberdenton.com/img/github_logo.png" alt="We\'re on Github!" width="88" height="31">
+						  </a>
+						  <a href="http://en.wikipedia.org/wiki/HTML5">
+								<img src="http://robotics.cyberdenton.com/img/html5.png" alt="Uses HTML5." width="88" height="31">
+						  </a>
+						  <a href="http://www.w3schools.com/css3/default.asp">
+								<img src="http://robotics.cyberdenton.com/img/css3.png" alt="Uses CSS3." width="88" height="31">
+						  </a>
+						  <a href="http://www.php.net/">
+								<img src="http://robotics.cyberdenton.com/img/php.png" alt="Uses PHP." width="88" height="31">
+						  </a>
+						  <a href="http://www.mysql.com/">
+								<img src="http://robotics.cyberdenton.com/img/mysql.png" alt="Uses MySQL." width="88" height="31">
+						  </a>
+						  <a href="http://jquery.com/">
+								<img src="http://robotics.cyberdenton.com/img/jquery.png" alt="Uses jQuery." width="88" height="31">
+						  </a>
+						  <div style="float:right;">
+								<a href="http://www.facebook.com/profile.php?id=100003187120085&sk=wall">
+									 <img src="http://robotics.cyberdenton.com/img/facebook.png" alt="Like us on Facebook!" width="22" height="22">
+								</a>
+								<a href="http://twitter.com/FoximusPrime369">
+									 <img src="http://robotics.cyberdenton.com/img/Twitter-icon.png" alt="Follow us on Twitter!" width="22" height="22">
+								</a>
+						  </div>						
+					 </article>
 					 </article>
 				</div>
 		 </div>
