@@ -29,6 +29,14 @@
                     <a href="http://jquery.com/">
                         <img src="img/jquery.png" alt="Uses jQuery." width="88" height="31">
                     </a>
+                    <div style="float:right;">
+                        <a href="http://www.facebook.com/profile.php?id=100003187120085&sk=wall">
+                            <img src="img/facebook.png" alt="Like us on Facebook!" width="22" height="22">
+                        </a>
+                        <a href="http://twitter.com/FoximusPrime369">
+                            <img src="img/Twitter-icon.png" alt="Follow us on Twitter!" width="22" height="22">
+                        </a>
+                    </div>                  
                 </article>
             </div>
        </div>
