@@ -25,7 +25,7 @@ if(!$session->isAdmin()){
 <head>
   <meta charset="utf-8">
   <title>Foximus-Prime</title>
-<base href="../" />
+<base href="http://robotics.cyberdenton.com/" />
 
 <?php 
 	include_once("../inc/header.php");

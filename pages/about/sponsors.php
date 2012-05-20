@@ -15,7 +15,7 @@ include_once("../../inc/sessionNew.php");
   <meta charset="utf-8">
 
   <title>Foximus-Prime</title>
-  <base href="../../" />
+  <base href="http://robotics.cyberdenton.com/" />
   
   <link rel="stylesheet" href="js/mylibs/flipwall/styles.css" type="text/css" media="screen" />
   

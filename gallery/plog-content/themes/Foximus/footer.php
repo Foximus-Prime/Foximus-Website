@@ -37,6 +37,29 @@
                     <a href="https://github.com/Foximus-Prime">
                         <img src="http://robotics.cyberdenton.com/img/github_logo.png" alt="We're on Github!" width="88" height="31">
                     </a>
+                    <a href="http://en.wikipedia.org/wiki/HTML5">
+                        <img src="http://robotics.cyberdenton.com/img/html5.png" alt="Uses HTML5." width="88" height="31">
+                    </a>
+                    <a href="http://www.w3schools.com/css3/default.asp">
+                        <img src="http://robotics.cyberdenton.com/img/css3.png" alt="Uses CSS3." width="88" height="31">
+                    </a>
+                    <a href="http://www.php.net/">
+                        <img src="http://robotics.cyberdenton.com/img/php.png" alt="Uses PHP." width="88" height="31">
+                    </a>
+                    <a href="http://www.mysql.com/">
+                        <img src="http://robotics.cyberdenton.com/img/mysql.png" alt="Uses MySQL." width="88" height="31">
+                    </a>
+                    <a href="http://jquery.com/">
+                        <img src="http://robotics.cyberdenton.com/img/jquery.png" alt="Uses jQuery." width="88" height="31">
+                    </a>
+                    <div style="float:right;">
+                        <a href="http://www.facebook.com/profile.php?id=100003187120085&sk=wall">
+                            <img src="http://robotics.cyberdenton.com/img/facebook.png" alt="Like us on Facebook!" width="22" height="22">
+                        </a>
+                        <a href="http://twitter.com/FoximusPrime369">
+                            <img src="http://robotics.cyberdenton.com/img/Twitter-icon.png" alt="Follow us on Twitter!" width="22" height="22">
+                        </a>
+                    </div>
                 </article>
             </div>
        </div>

@@ -19,11 +19,11 @@ include_once("../../inc/sessionNew.php");
 <?php 
 	include_once("../../inc/header.php");
 
-	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 19");
+	$rs = $database->query("SELECT `Text` FROM `Content` WHERE `Page` = 16 ORDER BY `Area`");
 ?>
         <div class="container_12">
         	<div class="grid_8">
-            	<div class="contentHead"></div>
+            	<div class="contentHead"><h3>Soup-a-palooza</h3></div>
                 <article class="contentCont">
 					<?php 
 						echo mysql_result($rs, 0);
@@ -31,7 +31,7 @@ include_once("../../inc/sessionNew.php");
                 </article>
             </div>
             <div class="grid_4">
-               <div class="contentHead"></div>
+               <div class="contentHead"><h3>FAQs</h3></div>
                <div class="contentCont">
                    	<?php 
 						echo mysql_result($rs, 1);

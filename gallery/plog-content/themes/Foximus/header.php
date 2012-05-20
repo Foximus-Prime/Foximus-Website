@@ -22,7 +22,6 @@
                         <ul class="subnav">
                             <li><a href="http://robotics.cyberdenton.com/pages/frc/game.php">2012 Game</a></li>
                             <li><a href="http://robotics.cyberdenton.com/pages/frc/robot.php">Our Robot</a></li>
-                            <li><a href="http://robotics.cyberdenton.com/pages/frc/archive.php">Robot Archive</a></li>
                         </ul>
                     </li>
                 </ul>

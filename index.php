@@ -41,7 +41,7 @@ include_once("inc/sessionNew.php");
                 </div>
             </div>
             </div>
-            <div class="clear"></div>
+            <div class="clear"></div><!-- countdown timer
             <div class="container_12" style="padding-top: 20px;">
             	<div class="grid_12">
                     <div class="contentHead">
@@ -53,16 +53,30 @@ include_once("inc/sessionNew.php");
                     </article>
                 </div>
             </div>
-            <div class="clear"></div>
+            <div class="clear"></div>-->
             <div class="container_12" style="padding-top: 20px;">
                 <div class="grid_4">
                     <div class="contentHead">
                         <h3>Sponsors</h3>
                     </div>
                     <article class="contentCont" style="height:250px;">
-                   	<?php 
-						echo mysql_result($rs, 2);
-					?>
+                        <a href="pages/about/sponsors.php">
+                            <div class="twitter">
+                                <div class="twitter_m" style="background:#fff">
+                                <?php
+									$i = rand(0,1);
+									switch ($i) {
+										case 0:
+											echo '<img alt="Sponsor: JCP" class="centerH" src="phpThumb/phpThumb.php?src=../img/sponsors/jcpenney.jpg&amp;w=242&amp;h=252" />';
+											break;
+										case 1:
+											echo '<img style="top:40px;" alt="Sponsor: Rasmussen" class="centerH" src="phpThumb/phpThumb.php?src=../img/sponsors/rasmussen.jpg&amp;w=242&amp;h=252" />';
+											break;
+									}
+								?>
+                                </div>
+                            </div>
+                        </a>
                     </article>
                 </div>
                 <div class="grid_4">
