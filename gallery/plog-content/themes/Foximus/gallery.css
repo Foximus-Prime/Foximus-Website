@@ -9,7 +9,7 @@ body { /* if embedding in your own template, you can remove these body style dec
 }
 
 a, a:link, a:visited, a:active {
-	color: #38c;
+	color: #38c000;
 	text-decoration: none;
 }
 
