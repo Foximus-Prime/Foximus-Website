@@ -15,7 +15,7 @@ include_once("../inc/sessionNew.php");
   <meta charset="utf-8">
 
   <title>Foximus-Prime</title>
-  <base href="http://robotics.cyberdenton.com/" />
+  <base href=<?php echo("\"".BASE_ADRS."\"") ?> />
 <?php 
 	include_once("../inc/header.php");
 ?>
