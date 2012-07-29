@@ -12,6 +12,8 @@ define("DB_NAME", "");
  * in the script.
  */
 
+define("BASE_ADRS", "/");
+
 define("TBL_USERS", "user");
 define("TBL_ACTIVE_USERS",  "active_users");
 define("TBL_ACTIVE_GUESTS", "active_guests");
