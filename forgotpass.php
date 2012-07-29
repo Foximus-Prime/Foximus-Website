@@ -37,7 +37,7 @@ if(isset($_SESSION['forgotpass'])){
       echo "<h1>New Password Generated</h1>";
       echo "<p>Your new password has been generated "
           ."and sent to the email <br>associated with your account. "
-          ."<a href=\"main.php\">Main</a>.</p>";
+          ."<a href=\"index.php\">Main</a>.</p>";
    }
    /**
     * Email could not be sent, therefore password was not
@@ -65,7 +65,7 @@ A new password will be generated for you and sent to the email address<br>
 associated with your account, all you have to do is enter your
 username.<br><br>
 <? echo $form->error("user"); ?>
-<form action="../process.php" method="POST">
+<form action="loginCheck.php" method="POST">
 <b>Username:</b> <input type="text" name="user" maxlength="30" value="<? echo $form->value("user"); ?>">
 <input type="hidden" name="subforgot" value="1">
 <input type="submit" value="Get New Password">

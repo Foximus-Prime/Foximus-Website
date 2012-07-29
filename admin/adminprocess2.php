@@ -318,7 +318,7 @@ class AdminProcess2
 	   	echo "<html><head><link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"../js/mylibs/niceforms/niceforms-default.css\" /></head><body>";
 	   	//modifyCont.php
 		global $database;
-	   	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team`, `Name` FROM `user`");
+	   	$rs = $database->query("SELECT `First_Name`, `Last_Name`, `Team`, `Name` FROM `user` ORDER BY Last_Name");
 		$msresult = array();
 		$cache = array();
 		for($i = 0; $i < mysql_num_rows($rs); $i++) {

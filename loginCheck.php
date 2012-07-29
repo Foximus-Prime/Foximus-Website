@@ -11,6 +11,7 @@
  * Last Updated: August 19, 2004
  */
 include_once("inc/sessionNew.php");
+include_once("inc/mailer.php");
 
 class Process
 {
