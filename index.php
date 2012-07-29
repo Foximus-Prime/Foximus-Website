@@ -115,4 +115,5 @@ include_once("inc/sessionNew.php");
     	<!-- Twitter -->
 	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
 	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
+
 <?php  include_once("inc/footer.php"); ?>
