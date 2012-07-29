@@ -83,7 +83,7 @@
                             <li><a href="http://www.w3schools.com/">Website Help</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://robotics.cyberdenton.com/pages/contact.php">Contact</a></li>
+                    <li><a href="pages/contact.php">Contact</a></li>
                 </ul>
            </div>
         </div>
