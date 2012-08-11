@@ -41,7 +41,7 @@ include_once("inc/sessionNew.php");
                 </div>
             </div>
             </div>
-            <div class="clear"></div><!-- countdown timer
+            <div class="clear"></div>countdown timer
             <div class="container_12" style="padding-top: 20px;">
             	<div class="grid_12">
                     <div class="contentHead">
@@ -53,7 +53,7 @@ include_once("inc/sessionNew.php");
                     </article>
                 </div>
             </div>
-            <div class="clear"></div>-->
+            <div class="clear"></div>
             <div class="container_12" style="padding-top: 20px;">
                 <div class="grid_4">
                     <div class="contentHead">
