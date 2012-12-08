@@ -42,7 +42,7 @@ $plog_random_images_site_url = $config['gallery_url'];
 $plog_random_images_amount = '5';
 
 /* The database query to pull the random images from the database. Comment out if you are pulling images from a specific collection below. */
-$plog_random_images_query = "SELECT * FROM ".PLOGGER_TABLE_PREFIX."pictures ORDER BY RAND() LIMIT $plog_random_images_amount";
+$plog_random_images_query = "SELECT * FROM ".PLOGGER_TABLE_PREFIX."pictures ORDER BY `parent_album` DESC , RAND() LIMIT $plog_random_images_amount";
 
 /* The database query to pull random images from a specific collection. Uncomment and change the X to the ID of the desired collection. */
 //$plog_random_images_query = "SELECT * FROM ".PLOGGER_TABLE_PREFIX."pictures WHERE `parent_collection` = X ORDER BY RAND() LIMIT $plog_random_images_amount";
