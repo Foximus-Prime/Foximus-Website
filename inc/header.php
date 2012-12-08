@@ -35,7 +35,7 @@
 <body>
   <?php if(BANNER){ ?>
   	<div id="soupPromo" class="banner">
-    	<a href="http://robotics.cyberdenton.com/pages/promo/soup.php"><img src="http://robotics.cyberdenton.com/img/soup-banner.png" class="centerH" alt="Soup-a-palooza" /></a>
+    	<a href="pages/promo/soup.php"><img src="img/soup-banner.png" class="centerH" alt="Soup-a-palooza" /></a>
     </div>
     <?php } ?>
 <a href="http://usfirst.org/"><div id="LeftSide"></div></a>
@@ -46,22 +46,22 @@
             <div id="menuR"></div>
             <div id="menuCont">
                 <ul id="mainMenuL" class="topnav">
-                    <li><a href="http://robotics.cyberdenton.com">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li>
                         <a href="#">About Us</a>
                         <ul class="subnav">
-                            <li><a href="http://robotics.cyberdenton.com/pages/about/current.php">Current Team</a></li>
-                            <li><a href="http://robotics.cyberdenton.com/pages/about/sponsors.php">Sponsors</a></li>
+                            <li><a href="pages/about/current.php">Current Team</a></li>
+                            <li><a href="pages/about/sponsors.php">Sponsors</a></li>
                             <li><a href="pages/about/website.php">Website</a></li>
                             <li><a href="pages/about/history.php">History</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://robotics.cyberdenton.com/pages/first.php">US FIRST Info</a></li>
+                    <li><a href="pages/first.php">US FIRST Info</a></li>
                     <li>
                         <a href="#">FRC</a>
                         <ul class="subnav">
-                            <li><a href="http://robotics.cyberdenton.com/pages/frc/game.php">2012 Game</a></li>
-                            <li><a href="http://robotics.cyberdenton.com/pages/frc/robot.php">Our Robot</a></li>
+                            <li><a href="pages/frc/game.php">2012 Game</a></li>
+                            <li><a href="pages/frc/robot.php">Our Robot</a></li>
                             <!--<li><a href="pages/frc/archive.php">Robot Archive</a></li>-->
                         </ul>
                     </li>
@@ -71,9 +71,9 @@
                     <li>
                         <a href="#">Media</a>
                         <ul class="subnav">
-                            <li><a href="http://robotics.cyberdenton.com/gallery/">Photo Gallery</a></li>
+                            <li><a href="gallery/">Photo Gallery</a></li>
                             <li><a href="http://www.youtube.com/user/FoximusPrime3695?feature=mhee">Video Archive</a></li>
-                            <li><a href="http://robotics.cyberdenton.com/pages/media/resources.php">Resources</a></li>
+                            <li><a href="pages/media/resources.php">Resources</a></li>
                         </ul>
                     </li>
                     <li>
@@ -83,7 +83,7 @@
                             <li><a href="http://www.w3schools.com/">Website Help</a></li>
                         </ul>
                     </li>
-                    <li><a href="http://robotics.cyberdenton.com/pages/contact.php">Contact</a></li>
+                    <li><a href="pages/contact.php">Contact</a></li>
                 </ul>
            </div>
         </div>

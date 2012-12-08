@@ -41,7 +41,7 @@ include_once("inc/sessionNew.php");
                 </div>
             </div>
             </div>
-            <div class="clear"></div><!-- countdown timer
+            <div class="clear"></div>countdown timer
             <div class="container_12" style="padding-top: 20px;">
             	<div class="grid_12">
                     <div class="contentHead">
@@ -53,7 +53,7 @@ include_once("inc/sessionNew.php");
                     </article>
                 </div>
             </div>
-            <div class="clear"></div>-->
+            <div class="clear"></div>
             <div class="container_12" style="padding-top: 20px;">
                 <div class="grid_4">
                     <div class="contentHead">
@@ -115,4 +115,5 @@ include_once("inc/sessionNew.php");
     	<!-- Twitter -->
 	<script src="http://twitter.com/javascripts/blogger.js" type="text/javascript"></script>
 	<script src="http://twitter.com/statuses/user_timeline/FoximusPrime369.json?callback=twitterCallback2&amp;count=3" type="text/javascript"></script>
+
 <?php  include_once("inc/footer.php"); ?>
